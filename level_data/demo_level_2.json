@@ -1,0 +1,10 @@
+{
+    "10":  { "type": "empty" },
+    "20":  { "type": "spikes" },
+    "30":  { "type": "tower", "height": 2 },
+    "32":  { "type": "towerWithSpikes", "height": 3 },
+    "50":  { "type": "empty" },
+    "60":  { "type": "floatingSquare", "height": 1 },
+    "70":  { "type": "spikes" },
+    "80":  { "type": "floatingSquareWithSpikes", "height": 2, "spikesOnTop": true }
+}
