@@ -23,6 +23,14 @@ class GameDisplay(InstructionGroup):
     def __init__(self, level_data):
         super(GameDisplay, self).__init__()
 
+        # floor
+        w, h = Window.size
+        self.floor = Rectangle(pos = (0, 0),
+                                size = (w, GROUND_HEIGHT))
+        self.floor_color = Color((0.5, 0.5, 0.5))
+        self.add(self.floor_color)
+        self.add(self.floor)
+
         # load obstacles
         self.obstacles = []
         for k, val in level_data.items():
@@ -42,6 +50,7 @@ class GameDisplay(InstructionGroup):
         self.player_y = GROUND_HEIGHT
         self.player_vel_y = 0
         self.is_on_something = True  # starts on ground
+        self.color_under_player = None # starts with no color under the player
         self.player_color_key = 1
         c = COLOR_MAP[self.player_color_key]
         self.player_color = Color(*c)
@@ -49,14 +58,6 @@ class GameDisplay(InstructionGroup):
                                       size=(self.player_size,self.player_size))
         self.add(self.player_color)
         self.add(self.player_rect)
-
-        # floor
-        w, h = Window.size
-        self.floor = Rectangle(pos = (0, 0),
-                                size = (w, GROUND_HEIGHT))
-        self.floor_color = Color((1,1,1))
-        self.add(self.floor_color)
-        self.add(self.floor)
 
         # dead state
         self.dead = False
@@ -67,7 +68,7 @@ class GameDisplay(InstructionGroup):
 
     def update_player_color(self, color_key):
         self.player_color_key = color_key
-        c = COLOR_MAP.get(color_key, (1,1,1))
+        c = COLOR_MAP.get(color_key, (0.5, 0.5, 0.5))
         self.player_color.r, self.player_color.g, self.player_color.b = c
 
     def scroll_world(self, dt):
@@ -108,6 +109,7 @@ class GameDisplay(InstructionGroup):
         psize  = self.player_size
         vy     = self.player_vel_y
 
+        color_under_player = None
         for obs in self.obstacles:
             result = obs.check_collision(px, py, psize, vy)
             if result.ctype == 'spike' or result.ctype == 'side':
@@ -120,6 +122,7 @@ class GameDisplay(InstructionGroup):
                 self.player_vel_y = 0
                 self.player_rect.pos = (self.player_x, self.player_y)
                 self.is_on_something = True
+                color_under_player = result.color
             elif result.ctype == 'bottom':
                 # bump head => push player down a bit
                 # e.g., set the player's top to obstacle bottom
@@ -130,6 +133,8 @@ class GameDisplay(InstructionGroup):
                 self.player_rect.pos = (self.player_x, self.player_y)
                 # not "on_something" from below
             # else 'none' => do nothing
+
+        self.color_under_player = color_under_player
 
     # -- Death / Respawn stubs (if you want them) --
     def died(self):
@@ -169,13 +174,10 @@ class PlayerController(object):
             self.key_held = int(keycode[1])
 
     def on_key_up(self, keycode):
-        print("HERE")
         if keycode[1] in ['1','2','3']:
             self.key_held = None
 
     def on_update(self, dt):
-
-        #print(self.key_held)
 
         # Can do nothing if dead
         if self.display.dead:
@@ -194,7 +196,13 @@ class PlayerController(object):
         # TODO: add 180 degree jump rotation
 
         # check color correctness
-        if color_key == self.display.player_color_key:
+        color_key_under_player = next( # maps the color of the obstacle to the color key
+            (
+                k for k, v in COLOR_MAP.items() 
+                if list(v) == self.display.color_under_player
+            ), 
+        None)
+        if color_key == color_key_under_player:
             self.display.correct_jump()
         else:
             self.display.incorrect_jump()
@@ -227,7 +235,6 @@ class MainWidget(BaseWidget):
         self.player_ctrl.on_key_down(keycode)
 
     def on_key_up(self, keycode):
-        print("HERE2")
         self.player_ctrl.on_key_up(keycode)
 
     def on_resize(self, win_size):

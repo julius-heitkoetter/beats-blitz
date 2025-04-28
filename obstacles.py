@@ -12,8 +12,9 @@ class CollisionResult:
       - none:   no collision
       - spike:  immediate death (for spikes)
     """
-    def __init__(self, ctype='none', topY=None):
+    def __init__(self, ctype='none', color=None, topY=None):
         self.ctype = ctype
+        self.color = color
         self.topY  = topY  # if landed on top, store the y-level of that top.
 
 class Obstacle(InstructionGroup):
@@ -29,6 +30,9 @@ class Obstacle(InstructionGroup):
         self.y         = 0
         self.width     = SLICE_WIDTH
         self.height    = 0
+
+        self.color_value = data.get('color', (0.5, 0.5, 0.5))
+
         self._init_graphics()
 
     def _init_graphics(self):
@@ -55,10 +59,36 @@ class Obstacle(InstructionGroup):
 
 class Empty(Obstacle):
     def _init_graphics(self):
-        self.height = 0  # effectively no vertical shape
+        self.height = 10  # effectively no vertical shape
+        self.color   = Color(*self.color_value)
+        self.rect    = Rectangle()
+        self.add(self.color)
+        self.add(self.rect)
+
+    def set_position(self, x, y):
+        super().set_position(x, y)
+        self.rect.pos  = (x, y-self.height)
+        self.rect.size = (self.width, self.height)
 
     def check_collision(self, px, py, psize, vy):
-        # always no collision with empty
+        # check if the player in on top of empty
+
+        # bounding box of tower is (x, y) -> (x+width, y+height)
+        left   = self.x
+        right  = self.x + self.width
+        bottom = self.y
+        top    = self.y + self.height
+
+        player_left   = px
+        player_right  = px + psize
+        player_bottom = py
+        player_top    = py + psize
+
+        # check bounding-box overlap
+        if (player_right > left and player_left < right and
+            player_top > bottom and player_bottom < top):
+            return CollisionResult('top', color=self.color_value, topY=top-self.height)
+
         return CollisionResult('none')
 
 class Spikes(Obstacle):
@@ -69,7 +99,7 @@ class Spikes(Obstacle):
     def _init_graphics(self):
         self.spike_height = 50
         self.height       = self.spike_height
-        self.color        = Color(1,1,1)
+        self.color        = Color(*self.color_value)
         self.line         = Line(points=[], width=1)
         self.add(self.color)
         self.add(self.line)
@@ -107,7 +137,7 @@ class Tower(Obstacle):
         n = self.data.get('height', 1)
         block_height = 40
         self.height  = n * block_height
-        self.color   = Color(1,1,1)
+        self.color   = Color(*self.color_value)
         self.rect    = Rectangle()
         self.add(self.color)
         self.add(self.rect)
@@ -145,7 +175,7 @@ class Tower(Obstacle):
             # The player's bottom is just at or slightly below the tower's top.
             # And the player is moving downward (vy <= 0):
             if abs(player_bottom - top) < epsilon and vy <= 0:
-                return CollisionResult('top', topY=top)
+                return CollisionResult('top', color=self.color_value, topY=top)
 
             # The player's top is near the tower's bottom, and the player is moving upward (vy >= 0)
             if abs(player_top - bottom) < epsilon and vy >= 0:
@@ -165,7 +195,7 @@ class TowerWithSpikes(Tower):
     def _init_graphics(self):
         super()._init_graphics()
         self.spike_height = 30
-        self.spike_color  = Color(1,1,1)
+        self.spike_color  = Color(*self.color_value)
         self.spike_line   = Line(points=[], width=1)
         self.add(self.spike_color)
         self.add(self.spike_line)
@@ -226,7 +256,7 @@ class FloatingSquare(Obstacle):
         self.block_size = 40
         self.floating_offset = n * 50
         self.height = self.block_size
-        self.color  = Color(1,1,1)
+        self.color  = Color(*self.color_value)
         self.rect   = Rectangle()
         self.add(self.color)
         self.add(self.rect)
@@ -253,7 +283,7 @@ class FloatingSquare(Obstacle):
             epsilon = 5
             # top collision
             if abs(player_bottom - top) < epsilon and vy <= 0:
-                return CollisionResult('top', topY=top)
+                return CollisionResult('top', color = self.color_value, topY=top)
             # bottom collision
             if abs(player_top - bottom) < epsilon and vy >= 0:
                 return CollisionResult('bottom', topY=bottom)
@@ -273,7 +303,7 @@ class FloatingSquareWithSpikes(FloatingSquare):
         super()._init_graphics()
         self.spike_height = 20
         self.spikes_on_top = self.data.get('spikesOnTop', True)
-        self.spike_color = Color(1,1,1)
+        self.spike_color = Color(*self.color_value)
         self.spike_line  = Line(points=[], width=1)
         self.add(self.spike_color)
         self.add(self.spike_line)
