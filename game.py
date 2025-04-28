@@ -7,7 +7,8 @@ from imslib.gfxutil import topleft_label
 from imslib.core import BaseWidget
 
 from obstacles import obstacle_factory
-from constants import GROUND_HEIGHT, GRAVITY, COLOR_MAP, SCROLL_SPEED, SLICE_WIDTH, JUMP_STRENGTH
+from constants import GROUND_HEIGHT, GRAVITY, COLOR_MAP, SCROLL_SPEED, SLICE_WIDTH, JUMP_STRENGTH, PLAYER_DEATH_TIMEOUT
+from music import death_callback, ressurection_callback, correct_jump_callback, incorrect_jump_callback
 
 # ---------------------------------------------------------
 #  GAME DISPLAY
@@ -61,6 +62,7 @@ class GameDisplay(InstructionGroup):
 
         # dead state
         self.dead = False
+        self.time_since_last_death = 0
 
         # scoring
         self.score  = 0
@@ -78,8 +80,15 @@ class GameDisplay(InstructionGroup):
             o.set_position(slice_left_x, GROUND_HEIGHT)
 
     def on_update(self, dt):
+
+        # Check if player should be ressurected
+        self.time_since_last_death += dt
+        if self.dead and self.time_since_last_death > PLAYER_DEATH_TIMEOUT:
+            self.ressurected()
+
         if self.dead:
             self.scroll_world(dt)
+            self.player_rect.pos = (self.player_x, self.player_y)
             return
 
         # scroll
@@ -115,7 +124,7 @@ class GameDisplay(InstructionGroup):
             if result.ctype == 'spike' or result.ctype == 'side':
                 # immediate death
                 self.died()
-                return
+                return True
             elif result.ctype == 'top':
                 # land on top => set player bottom to that top
                 self.player_y = result.topY
@@ -136,17 +145,36 @@ class GameDisplay(InstructionGroup):
 
         self.color_under_player = color_under_player
 
-    # -- Death / Respawn stubs (if you want them) --
+        return False
+
     def died(self):
+
+        # If already dead, don't do anything new
+        if self.dead:
+            return
+
         self.dead = True
+        self.time_since_last_death = 0
+        self.player_y = GROUND_HEIGHT
         self.score -= 50
         self.streak = 0
-        self.died_function()
+        death_callback()
+
         # color the player gray to indicate death
         self.player_color.r, self.player_color.g, self.player_color.b = (0.2, 0.2, 0.2)
 
-    def died_function(self):
-        print("died() function called")
+    def ressurected(self):
+
+        if self.check_collisions(self.player_y):
+            print("INFO : Can't ressurect because there is an obstacle in the way, waiting...")
+            return
+
+        self.dead = False
+        ressurection_callback()
+
+         # color the player white to indicate back to lift
+        self.player_color.r, self.player_color.g, self.player_color.b = (1, 1, 1)
+
 
     def correct_jump(self):
         self.score += 10
@@ -202,10 +230,13 @@ class PlayerController(object):
                 if list(v) == self.display.color_under_player
             ), 
         None)
+
         if color_key == color_key_under_player:
             self.display.correct_jump()
+            correct_jump_callback(color_key)
         else:
             self.display.incorrect_jump()
+            incorrect_jump_callback(color_key)
 
         # update color to the newly pressed key
         self.display.update_player_color(color_key)

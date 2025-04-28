@@ -31,7 +31,7 @@ class Obstacle(InstructionGroup):
         self.width     = SLICE_WIDTH
         self.height    = 0
 
-        self.color_value = data.get('color', (0.5, 0.5, 0.5))
+        self.color_value = data.get('color', (1,1,1))
 
         self._init_graphics()
 
