@@ -8,7 +8,7 @@ from imslib.core import BaseWidget
 
 from obstacles import obstacle_factory
 from constants import GROUND_HEIGHT, GRAVITY, COLOR_MAP, SCROLL_SPEED, SLICE_WIDTH, JUMP_STRENGTH, PLAYER_DEATH_TIMEOUT
-from music import death_callback, ressurection_callback, correct_jump_callback, incorrect_jump_callback
+from music import AudioController
 
 # ---------------------------------------------------------
 #  GAME DISPLAY
@@ -21,8 +21,10 @@ class GameDisplay(InstructionGroup):
       top collision => stand or bottom collision => head-bump
     - Only allows jumps when on ground or on top of an obstacle
     """
-    def __init__(self, level_data):
+    def __init__(self, level_data, audio):
         super(GameDisplay, self).__init__()
+
+        self.audio = audio
 
         # floor
         w, h = Window.size
@@ -158,7 +160,7 @@ class GameDisplay(InstructionGroup):
         self.player_y = GROUND_HEIGHT
         self.score -= 50
         self.streak = 0
-        death_callback()
+        self.audio.death_callback()
 
         # color the player gray to indicate death
         self.player_color.r, self.player_color.g, self.player_color.b = (0.2, 0.2, 0.2)
@@ -170,7 +172,7 @@ class GameDisplay(InstructionGroup):
             return
 
         self.dead = False
-        ressurection_callback()
+        self.audio.ressurection_callback()
 
          # color the player white to indicate back to lift
         self.player_color.r, self.player_color.g, self.player_color.b = (1, 1, 1)
@@ -192,8 +194,9 @@ class PlayerController(object):
     - Only jumps if 'is_on_something' is true
     - Checks color correctness
     """
-    def __init__(self, display):
+    def __init__(self, display, audio):
         self.display = display
+        self.audio = audio
 
         self.key_held = None
 
@@ -233,10 +236,10 @@ class PlayerController(object):
 
         if color_key == color_key_under_player:
             self.display.correct_jump()
-            correct_jump_callback(color_key)
+            self.audio.correct_jump_callback(color_key)
         else:
             self.display.incorrect_jump()
-            incorrect_jump_callback(color_key)
+            self.audio.incorrect_jump_callback(color_key)
 
         # update color to the newly pressed key
         self.display.update_player_color(color_key)
@@ -246,15 +249,18 @@ class PlayerController(object):
 # ---------------------------------------------------------
 
 class MainWidget(BaseWidget):
-    def __init__(self, level_data_path = 'level_data/demo_level_1.json'):
+    def __init__(self, level_data_path, song_base_path):
         super(MainWidget, self).__init__()
 
         # load JSON
         with open(level_data_path, 'r') as f:
             level_data = json.load(f)
 
-        self.display = GameDisplay(level_data)
-        self.player_ctrl = PlayerController(self.display)
+        self.audio_ctrl = AudioController(song_base_path)
+        self.audio_ctrl.toggle()
+
+        self.display = GameDisplay(level_data, self.audio_ctrl)
+        self.player_ctrl = PlayerController(self.display, self.audio_ctrl)
         self.canvas.add(self.display)
 
         self.info = topleft_label()
@@ -274,4 +280,5 @@ class MainWidget(BaseWidget):
     def update(self, dt):
         self.display.on_update(dt)
         self.player_ctrl.on_update(dt)
+        self.audio_ctrl.on_update()
         self.info.text = f"Score: {self.display.score}\nStreak: {self.display.streak}"
