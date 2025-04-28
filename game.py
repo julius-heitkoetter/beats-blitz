@@ -2,6 +2,7 @@ import json
 from kivy.graphics.instructions import InstructionGroup
 from kivy.graphics import Color, Line, Rectangle
 from kivy.clock import Clock
+from kivy.core.window import Window
 from imslib.gfxutil import topleft_label
 from imslib.core import BaseWidget
 
@@ -49,6 +50,14 @@ class GameDisplay(InstructionGroup):
         self.add(self.player_color)
         self.add(self.player_rect)
 
+        # floor
+        w, h = Window.size
+        self.floor = Rectangle(pos = (0, 0),
+                                size = (w, GROUND_HEIGHT))
+        self.floor_color = Color((1,1,1))
+        self.add(self.floor_color)
+        self.add(self.floor)
+
         # dead state
         self.dead = False
 
@@ -69,7 +78,6 @@ class GameDisplay(InstructionGroup):
 
     def on_update(self, dt):
         if self.dead:
-            # If you want continuing to scroll, do so:
             self.scroll_world(dt)
             return
 
@@ -164,14 +172,11 @@ class PlayerController(object):
     def attempt_jump(self, color_key):
         # can only jump if on something
         if not self.display.is_on_something:
-            # We can still do an "incorrect jump" if user tries while in midair,
-            # or do nothing at all. For now let's do nothing:
             return
 
         # apply upward velocity
         self.display.player_vel_y = JUMP_STRENGTH
-        # 180° rotation is conceptual; you could store a rotation var
-        print("Player jumped (180° rotation).")
+        # TODO: add 180 degree jump rotation
 
         # check color correctness
         if color_key == self.display.player_color_key:
