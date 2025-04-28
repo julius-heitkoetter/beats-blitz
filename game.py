@@ -162,12 +162,27 @@ class PlayerController(object):
     def __init__(self, display):
         self.display = display
 
+        self.key_held = None
+
     def on_key_down(self, keycode):
+        if keycode[1] in ['1','2','3']:
+            self.key_held = int(keycode[1])
+
+    def on_key_up(self, keycode):
+        print("HERE")
+        if keycode[1] in ['1','2','3']:
+            self.key_held = None
+
+    def on_update(self, dt):
+
+        #print(self.key_held)
+
+        # Can do nothing if dead
         if self.display.dead:
             return
-        if keycode[1] in ['1','2','3']:
-            color_key = int(keycode[1])
-            self.attempt_jump(color_key)
+
+        if self.key_held:
+            self.attempt_jump(self.key_held)
 
     def attempt_jump(self, color_key):
         # can only jump if on something
@@ -212,11 +227,13 @@ class MainWidget(BaseWidget):
         self.player_ctrl.on_key_down(keycode)
 
     def on_key_up(self, keycode):
-        pass
+        print("HERE2")
+        self.player_ctrl.on_key_up(keycode)
 
     def on_resize(self, win_size):
         pass
 
     def update(self, dt):
         self.display.on_update(dt)
+        self.player_ctrl.on_update(dt)
         self.info.text = f"Score: {self.display.score}\nStreak: {self.display.streak}"
