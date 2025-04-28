@@ -1,14 +1,10 @@
 import json
 from kivy.graphics.instructions import InstructionGroup
 from kivy.graphics import Color, Line, Rectangle
-from kivy.clock import Clock
 from kivy.core.window import Window
-from imslib.gfxutil import topleft_label
-from imslib.core import BaseWidget
 
 from obstacles import obstacle_factory
 from constants import GROUND_HEIGHT, GRAVITY, COLOR_MAP, SCROLL_SPEED, SLICE_WIDTH, JUMP_STRENGTH, PLAYER_DEATH_TIMEOUT
-from music import AudioController
 
 # ---------------------------------------------------------
 #  GAME DISPLAY
@@ -234,51 +230,13 @@ class PlayerController(object):
             ), 
         None)
 
+        tick_num = int(self.display.scroll_x / SLICE_WIDTH)
         if color_key == color_key_under_player:
             self.display.correct_jump()
-            self.audio.correct_jump_callback(color_key)
+            self.audio.correct_jump_callback(color_key, tick_num )
         else:
             self.display.incorrect_jump()
-            self.audio.incorrect_jump_callback(color_key)
+            self.audio.incorrect_jump_callback(color_key, tick_num)
 
         # update color to the newly pressed key
         self.display.update_player_color(color_key)
-
-# ---------------------------------------------------------
-#  MAIN WIDGET
-# ---------------------------------------------------------
-
-class MainWidget(BaseWidget):
-    def __init__(self, level_data_path, song_base_path):
-        super(MainWidget, self).__init__()
-
-        # load JSON
-        with open(level_data_path, 'r') as f:
-            level_data = json.load(f)
-
-        self.audio_ctrl = AudioController(song_base_path)
-        self.audio_ctrl.toggle()
-
-        self.display = GameDisplay(level_data, self.audio_ctrl)
-        self.player_ctrl = PlayerController(self.display, self.audio_ctrl)
-        self.canvas.add(self.display)
-
-        self.info = topleft_label()
-        self.add_widget(self.info)
-
-        Clock.schedule_interval(self.update, 1/60.0)
-
-    def on_key_down(self, keycode, modifiers):
-        self.player_ctrl.on_key_down(keycode)
-
-    def on_key_up(self, keycode):
-        self.player_ctrl.on_key_up(keycode)
-
-    def on_resize(self, win_size):
-        pass
-
-    def update(self, dt):
-        self.display.on_update(dt)
-        self.player_ctrl.on_update(dt)
-        self.audio_ctrl.on_update()
-        self.info.text = f"Score: {self.display.score}\nStreak: {self.display.streak}"

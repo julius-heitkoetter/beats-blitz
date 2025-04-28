@@ -81,13 +81,13 @@ class AudioController(object):
         """
         self.set_mute(False)
 
-    def correct_jump_callback(self, jump_key):
+    def correct_jump_callback(self, jump_key, tick_num):
         """
         Called when the player performs a jump that's in line with the color
         """
-        pass
+        print("CORRECT JUMP", jump_key, tick_num)
 
-    def incorrect_jump_callback(self, jump_key):
+    def incorrect_jump_callback(self, jump_key, tick_num):
         """
         Called when the player does not jump correctly
         """
