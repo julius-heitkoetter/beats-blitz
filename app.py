@@ -16,9 +16,8 @@ from kivy.uix.screenmanager import Screen, ScreenManager, FadeTransition
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 
-from main import MainWidget           # unchanged ─ your actual game logic
+from main import MainWidget
 
-# ─────────────────────────────── 1.  CONSTANTS & PALETTE ──────────────────────────────
 PALETTE = {
     "bg": (0.05, 0.05, 0.08),
     "fg": (1.0, 1.0, 1.0),
@@ -29,7 +28,6 @@ PALETTE = {
 FONT_NAME      = "fonts/UbuntuMono-B.ttf"
 METADATA_FILE  = Path("level_data/level_metadata.json")
 
-# ──────────────────────────── 2.  METADATA LOAD / SAVE ────────────────────────────────
 def load_levels() -> dict[str, dict]:
     if METADATA_FILE.exists():
         return json.loads(METADATA_FILE.read_text())
@@ -38,7 +36,6 @@ def load_levels() -> dict[str, dict]:
 def save_levels(levels: dict):
     METADATA_FILE.write_text(json.dumps(levels, indent=4))
 
-# ────────────────────────────── 3.  BASIC UI WIDGETS ──────────────────────────────────
 class RetroLabel(Label):
     def __init__(self, **kw):
         super().__init__(font_name=FONT_NAME, color=PALETTE["fg"],
@@ -60,7 +57,6 @@ class RetroButton(Button):
     def _recolor(self, *_):
         self._col.rgb = PALETTE["accent_off"] if self.disabled else PALETTE["accent_on"]
 
-# ─────────────────────────────── 4.  HOME  SCREEN ─────────────────────────────────────
 class HomeScreen(Screen):
     def __init__(self, **kw):
         super().__init__(name="home", **kw)
@@ -71,8 +67,10 @@ class HomeScreen(Screen):
         base.add_widget(title)
 
         play = RetroButton(text="PLAY", size=(220, 70), size_hint=(None, None),
-                           pos_hint={"center_x": .5, "center_y": .25})
-        play.bind(on_release=lambda *_: self.manager.current = "levels")
+                   pos_hint={"center_x": .5, "center_y": .25})
+        def go_to_levels(*_):
+            self.manager.current = "levels"
+        play.bind(on_release=go_to_levels)
         base.add_widget(play)
 
         with self.canvas.before:
@@ -101,14 +99,14 @@ class HomeScreen(Screen):
 
 # ─────────────────────────────── 5.  HOW-TO SCREEN ───────────────────────────────────
 HOW_TO_TEXT = (
-    "[b]HOW TO PLAY[/b]\n\n"
-    "• The stage scrolls automatically – jump over obstacles like Geometry Dash.\n"
-    "• Press number keys [b]1-4[/b]; each key emits a different colour.\n"
-    "• The colour of the key you press must match the colour of the platform you "
-    "jump [i]from[/i]. White platforms accept any colour.\n"
-    "• Wrong colour: −50 pts.  Death: −200 pts.  Correct jumps add points.\n"
-    "• You respawn after a short delay; go for the highest score you can.\n"
-    "• Press [b]Q[/b] to restart a level or (while playing) quit back to HOME."
+    "[b]HOW TO PLAY[/b]\n\n\n"
+    "• The stage scrolls automatically – jump over obstacles like Geometry Dash.\n\n"
+    "• Press number keys [b]1-3[/b]; each key emits a different colour.\n\n"
+    "• The colour of the key you press must match the colour of the platform\n  you "
+    "jump [i]from[/i]. White platforms accept any colour.\n\n"
+    "• Wrong colour: −50 pts.  Death: −50 pts. Jumps off the correct color add 10 pts.\n\n"
+    "• You respawn after a short delay; go for the highest score you can.\n\n"
+    "• Press [b]Q[/b] quit back to HOME while playing"
 )
 
 class HowToPlayScreen(Screen):
@@ -116,17 +114,19 @@ class HowToPlayScreen(Screen):
         super().__init__(name="howto", **kw)
         base = RelativeLayout(); self.add_widget(base)
         label = RetroLabel(text=HOW_TO_TEXT, halign="left",
-                           size_hint=(.9, .9), pos_hint={"center_x": .5, "center_y": .5})
+                           size_hint=(.6, .6), pos_hint={"center_x": .5, "center_y": .5})
         label.bind(size=lambda *_: label.texture_update())
         base.add_widget(label)
         back = RetroButton(text="BACK", size_hint=(None, None), size=(160, 60),
                            pos_hint={"right": .98, "y": .02})
-        back.bind(on_release=lambda *_: self.manager.current.__set__("levels"))
+        back.bind(on_release=self._go_to_levels)
         base.add_widget(back)
         with self.canvas.before:
             Color(*PALETTE["bg"]); Rectangle(size=Window.size)
 
-# ───────────────────────────── 6.  LEVEL-SELECT SCREEN ────────────────────────────────
+    def _go_to_levels(self, *_):
+        self.manager.current = "levels"
+
 class LevelSelectScreen(Screen):
     def __init__(self, **kw):
         super().__init__(name="levels", **kw)
@@ -153,9 +153,9 @@ class LevelSelectScreen(Screen):
                                      pos_hint={"right": .95, "y": .05}, disabled=True)
         self.start_btn.bind(on_release=self._start_level); root.add_widget(self.start_btn)
 
-        howto_btn = RetroButton(text="HOW  TO  PLAY", size_hint=(None, None),
-                                size=(200, 50), pos_hint={"x": .02, "y": .05})
-        howto_btn.bind(on_release=lambda *_: self.manager.current.__set__("howto"))
+        howto_btn = RetroButton(text="HOW  TO  PLAY", size_hint=(.3, .1),
+                                pos_hint={"x": .02, "y": .05})
+        howto_btn.bind(on_release=self._go_to_howto)
         root.add_widget(howto_btn)
 
         # populate buttons
@@ -168,6 +168,9 @@ class LevelSelectScreen(Screen):
             Color(*PALETTE["bg"]); Rectangle(size=Window.size)
 
         self.selected: str | None = None
+
+    def _go_to_howto(self, *_):
+        self.manager.current = "howto"
 
     def _select(self, name: str):
         self.selected = name; meta = self.levels[name]
@@ -186,7 +189,6 @@ class LevelSelectScreen(Screen):
         self.manager.get_screen("game").load_level(self.selected, meta)
         self.manager.current = "game"
 
-# ─────────────────────────────── 7.  SCOREBOARD ───────────────────────────────────────
 class ScoreBoard(RetroLabel):
     def __init__(self, level_name: str, display, meta, **kw):
         super().__init__(font_size="18sp", **kw)
@@ -201,7 +203,6 @@ class ScoreBoard(RetroLabel):
             f"Streak: {self.display.streak}\n"
             f"Stars : {self._stars(score, max_sc)}"
         )
-        # ───── live high-score update & file write ─────
         if score > self.meta["high_score"]:
             self.meta["high_score"] = score
             app = App.get_running_app(); save_levels(app.levels)
@@ -212,7 +213,6 @@ class ScoreBoard(RetroLabel):
         r = score/max_sc
         return 3 if r >= .9 else 2 if r >= .66 else 1 if r >= .33 else 0
 
-# ─────────────────────────────── 8.  GAME  SCREEN ─────────────────────────────────────
 class GameScreen(Screen):
     def __init__(self, **kw):
         super().__init__(name="game", **kw)
@@ -230,9 +230,8 @@ class GameScreen(Screen):
                                      pos=(110, Window.height-120))
         self.add_widget(self.scoreboard)
 
-    # key passthrough + quit-to-home ----------------------------------------------------
     def on_key_down(self, keycode, modifiers):
-        if keycode[1] == 'q':                    # (2) QUICK QUIT
+        if keycode == 113: #  113 == "q"
             self.manager.current = "home"
             return
         if self.game_widget:
@@ -242,7 +241,6 @@ class GameScreen(Screen):
         if self.game_widget:
             self.game_widget.on_key_up(["", keycode])
 
-# ─────────────────────────────── 9.  ROOT APP ─────────────────────────────────────────
 class BeatBlitzApp(App):
     title = "Beat Blitz"
 
@@ -258,7 +256,6 @@ class BeatBlitzApp(App):
         Window.bind(on_key_down=self._dispatch_down, on_key_up=self._dispatch_up)
         return sm
 
-    # centralised key forwarding --------------------------------------------------------
     def _dispatch_down(self, win, keycode, scancode, txt, modifiers):
         scr = self.root.current_screen
         if hasattr(scr, "on_key_down"):
@@ -269,6 +266,5 @@ class BeatBlitzApp(App):
         if hasattr(scr, "on_key_up"):
             scr.on_key_up(keycode)
 
-# ─────────────────────────────── 10.  MAIN -- RUN ─────────────────────────────────────
 if __name__ == "__main__":
     BeatBlitzApp().run()

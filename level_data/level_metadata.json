@@ -23,7 +23,7 @@
         "high_score": 0,
         "stars_collected": 0
     },
-    "Byte\u2011Beat Boulevard": {
+    "Byte Beat Boulevard": {
         "level_file": "level_data/byte_beat_blvd.json",
         "song_base_path": "level_data/ByteBeatBoulevard",
         "difficulty": "Medium",
