@@ -13,7 +13,10 @@ class MainWidget(BaseWidget):
         with open(level_data_path, 'r') as f:
             level_data = json.load(f)
 
-        self.audio_ctrl = AudioController(song_base_path)
+        with open(song_base_path, 'r') as f:
+            midi_data = json.load(f)
+
+        self.audio_ctrl = AudioController(midi_data)
         self.audio_ctrl.toggle()
 
         self.display = GameDisplay(level_data, self.audio_ctrl)
@@ -38,8 +41,8 @@ class MainWidget(BaseWidget):
 
 if __name__ == "__main__":
     
-    level_data_path = 'level_data/demo_level_2.json'
-    song_base_path = 'level_data/SmokeOnTheWater'
+    level_data_path = 'level_data/level_data.json'
+    song_base_path = 'level_data/midi_data.json'
 
     run(
         MainWidget(
