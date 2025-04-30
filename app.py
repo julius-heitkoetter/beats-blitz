@@ -196,7 +196,7 @@ class ScoreBoard(RetroLabel):
         Clock.schedule_interval(self._refresh, .1)
 
     def _refresh(self, *_):
-        score = max(0, self.display.score)
+        score = self.display.score
         max_sc = self.meta["max_score"]
         self.text = (
             f"Score : {score}/{max_sc}\n"

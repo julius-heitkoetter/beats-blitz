@@ -78,6 +78,7 @@ class GameDisplay(InstructionGroup):
             o.set_position(slice_left_x, GROUND_HEIGHT)
 
     def on_update(self, dt):
+        #print(self.score)
 
         # Check if player should be ressurected
         self.time_since_last_death += dt
@@ -234,7 +235,7 @@ class PlayerController(object):
         if color_key == color_key_under_player:
             self.display.correct_jump()
             self.audio.correct_jump_callback(color_key, tick_num )
-        else:
+        elif color_key_under_player is not None:
             self.display.incorrect_jump()
             self.audio.incorrect_jump_callback(color_key, tick_num)
 
