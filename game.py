@@ -34,7 +34,7 @@ class GameDisplay(InstructionGroup):
         self.obstacles = []
         for k, val in level_data.items():
             slice_idx = int(k)
-            obj = obstacle_factory(slice_idx, val)
+            obj = obstacle_factory(slice_idx+2, val)
             self.obstacles.append(obj)
         self.obstacles.sort(key=lambda o: o.slice_idx)
 
@@ -155,7 +155,7 @@ class GameDisplay(InstructionGroup):
         self.dead = True
         self.time_since_last_death = 0
         self.player_y = GROUND_HEIGHT
-        self.score -= 50
+        self.score -= 10
         self.streak = 0
         self.audio.death_callback()
 
