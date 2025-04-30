@@ -1,34 +1,11 @@
 {
-    "Smoking": {
-        "level_file": "level_data/demo_level_3.json",
-        "song_base_path": "level_data/SmokeOnTheWater",
-        "difficulty": "Medium",
-        "max_score": 2000,
-        "high_score": 470,
-        "stars_collected": 1
-    },
     "Galactic Groove": {
         "level_file": "level_data/song1/obstacles.json",
         "song_base_path": "level_data/song1/midi_data.json",
+        "song_title": "Zelda Soundtrack",
         "difficulty": "Easy",
         "max_score": 1000,
         "high_score": 20,
-        "stars_collected": 0
-    },
-    "Turbo Tunnel": {
-        "level_file": "level_data/turbo_tunnel.json",
-        "song_base_path": "level_data/TurboTunnel",
-        "difficulty": "Hard",
-        "max_score": 2800,
-        "high_score": 0,
-        "stars_collected": 0
-    },
-    "Byte Beat Boulevard": {
-        "level_file": "level_data/byte_beat_blvd.json",
-        "song_base_path": "level_data/ByteBeatBoulevard",
-        "difficulty": "Medium",
-        "max_score": 1800,
-        "high_score": 0,
         "stars_collected": 0
     }
 }

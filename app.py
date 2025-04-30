@@ -179,7 +179,7 @@ class LevelSelectScreen(Screen):
             f"Difficulty : [color=#ff5555]{meta['difficulty']}[/color]\n"
             f"High Score : {meta['high_score']} / {meta['max_score']}\n"
             f"Stars      : {meta['stars_collected']}\n"
-            f"Song       : {Path(meta['song_base_path']).name}"
+            f"Song       : {Path(meta['song_title']).name}"
         )
         self.start_btn.disabled = False
 
