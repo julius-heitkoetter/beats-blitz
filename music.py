@@ -19,7 +19,7 @@ class AudioController(object):
         self.synth = Synth()
        
 
-        self.tempo_map  = SimpleTempoMap(120)
+        self.tempo_map  = SimpleTempoMap(151)
         self.sched = AudioScheduler(self.tempo_map)
 
         self.audio.set_generator(self.sched)

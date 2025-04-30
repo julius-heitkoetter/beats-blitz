@@ -16,17 +16,17 @@ class LevelGenerator:
         # Each array index corresponds to an octave (C0, C1, etc.)
         self.platform_mappings = {
             # C notes (12, 24, 36, etc.)
-            0: {"type": "floatingSquare", "color": [1, 0, 0], "height": 2},                        # C0 - Basic platform
+            0: {"type": "empty", "color": [1, 0, 0], "height": 2},                        # C0 - Basic platform
             1: {"type": "floatingSquare", "color": [1, 0, 0], "height": 2},    # C1 - Red platform
             2: {"type": "floatingSquare", "color": [0, 1, 0], "height": 2},    # C2 - Green platform
             3: {"type": "floatingSquare", "color": [0, 0, 1], "height": 2},    # C3 - Blue platform
-            4: {"type": "tower", "height": 1},           # C4 - White tower
+            4: {"type": "floatingSquare", "height": 1, "color": [1, 0, 0]},           # C4 - White tower
             5: {"type": "tower", "height": 1, "color": [1, 0, 0]},  # C5 - Red tower
             6: {"type": "tower", "height": 1, "color": [0, 0, 1]},  # C6 - Blue tower
             7: {"type": "tower", "height": 1, "color": [0, 1, 0]},  # C7 - Green tower
             8: {"type": "towerWithSpikes", "height": 2},           # C8 - Tower with spikes
             9: {"type": "spikes"},                                  # C9 - Spikes
-            10: {"type": "floatingSquare", "height": 2},            # C10 - Floating square
+            10: {"type": "floatingSquare","color": [0, 1, 0], "height": 2},            # C10 - Floating square
             11: {"type": "floatingSquareWithSpikes", "height": 2, "spikesOnTop": True}  # C11 - Floating spikes
         }
         
