@@ -37,6 +37,8 @@ class MainWidget(BaseWidget):
     def update(self, dt):
         self.display.on_update(dt)
         self.player_ctrl.on_update(dt)
+
+    def on_update(self):
         self.audio_ctrl.on_update()
 
 if __name__ == "__main__":
