@@ -16,7 +16,7 @@ class LevelGenerator:
         # Each array index corresponds to an octave (C0, C1, etc.)
         self.platform_mappings = {
             # C notes (12, 24, 36, etc.)
-            0: {"type": "floatingSquare", "color": [1, 1, 1], "height": 2},                        # C0 - Basic platform
+            0: {"type": "floatingSquare", "color": [1, 0, 0], "height": 2},                        # C0 - Basic platform
             1: {"type": "floatingSquare", "color": [1, 0, 0], "height": 2},    # C1 - Red platform
             2: {"type": "floatingSquare", "color": [0, 1, 0], "height": 2},    # C2 - Green platform
             3: {"type": "floatingSquare", "color": [0, 0, 1], "height": 2},    # C3 - Blue platform
@@ -303,7 +303,7 @@ def generate_files(midi_file, level_output, midi_output, platform_channel=None):
     
     print(f"Generated {level_output} with {len(level_data)} platform slices")
     print(f"Generated {midi_output} with data organized by MIDI ticks (excluding platform channel {platform_channel})")
-    
+
 def main():
     parser = argparse.ArgumentParser(description='Generate Beat Blitz level from a MIDI file')
     parser.add_argument('--midi_file', help='Path to the MIDI file')
