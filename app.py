@@ -26,15 +26,18 @@ PALETTE = {
     "accent2": (1.0, 0.35, 0.35),
 }
 FONT_NAME      = "fonts/UbuntuMono-B.ttf"
-METADATA_FILE  = Path("level_data/level_metadata.json")
+METADATA_FILES  = {'Iron':Path("level_data/iron/level_metadata.json"), 'Awakening':Path("level_data/zelda/level_metadata.json")}
 
 def load_levels() -> dict[str, dict]:
-    if METADATA_FILE.exists():
-        return json.loads(METADATA_FILE.read_text())
-    raise FileNotFoundError(f"Missing {METADATA_FILE!s}")
+    out = {}
+    for i in METADATA_FILES:
+        if METADATA_FILES[i].exists():
+            out.update(json.loads(METADATA_FILES[i].read_text()))
+    return out
+    raise FileNotFoundError(f"Missing")
 
-def save_levels(levels: dict):
-    METADATA_FILE.write_text(json.dumps(levels, indent=4))
+def save_levels(levels: dict, level):
+    METADATA_FILES[level].write_text(json.dumps(levels, indent=4))
 
 class RetroLabel(Label):
     def __init__(self, **kw):
@@ -258,7 +261,7 @@ class EndOfLevelScreen(Screen):
             meta["high_score"] = score
         if stars > meta["stars_collected"]:
             meta["stars_collected"] = stars
-        save_levels(App.get_running_app().levels)
+        save_levels(App.get_running_app().levels,self.lvl_name)
 
     def _replay(self, *_):
         game = self.manager.get_screen("game")
