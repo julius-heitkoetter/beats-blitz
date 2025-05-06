@@ -9,7 +9,7 @@ class LevelGenerator:
     def __init__(self, midi_file_path):
         """Initialize the level generator with a MIDI file."""
         self.midi_file = MidiFile(midi_file_path)
-        for track in mid:
+        for track in self.midi_file.tracks:
             for msg in track:
                 if msg.type == 'set_tempo':
                     self.tempo = msg.tempo
