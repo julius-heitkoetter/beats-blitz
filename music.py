@@ -8,7 +8,7 @@ from constants import SLICE_WIDTH, SCROLL_SPEED
 from imslib.clock import Clock, SimpleTempoMap, AudioScheduler, tick_str, kTicksPerQuarter, quantize_tick_up
 
 # Handles everything about Audio.
-#   creates the main Audio object
+#   creates the main Audio fobject
 #   load and plays solo and bg audio tracks
 #   creates audio buffers for sound-fx (miss sound)
 #   functions as the clock (returns song time elapsed)
@@ -19,11 +19,7 @@ class AudioController(object):
         self.synth = Synth()
        
 
-        self.tempo_map  = SimpleTempoMap(151)
-        self.sched = AudioScheduler(self.tempo_map)
-
-        self.audio.set_generator(self.sched)
-        self.sched.set_generator(self.synth)
+        
 
 
 
@@ -32,6 +28,12 @@ class AudioController(object):
         self.midi_data = midi_data
 
         self.playing = False
+
+        self.tempo_map  = SimpleTempoMap(self.midi_data["metadata"]["bpm"])
+        self.sched = AudioScheduler(self.tempo_map)
+
+        self.audio.set_generator(self.sched)
+        self.sched.set_generator(self.synth)
 
 
         """#get sound effects from 
@@ -98,7 +100,7 @@ class AudioController(object):
             note = notes['note']
             velocity = notes['velocity']
             length = notes['length_ticks']
-
+            #print("start tick is, ", notes["start_tick"], "and slice is ", notes["slice"])
             self.synth.noteon(channel, note, velocity)
             self.channel_synths[channel]['active_notes'].add(note)
             note_off_tick = now + length * 10

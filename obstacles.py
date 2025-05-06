@@ -368,6 +368,7 @@ def obstacle_factory(slice_idx, data):
     elif otype == 'floatingSquare':
         return FloatingSquare(slice_idx, data)
     elif otype == 'floatingSquareWithSpikes':
+        data["color"] = (1,1,1) #fo
         return FloatingSquareWithSpikes(slice_idx, data)
     else:
         return Empty(slice_idx, data)

@@ -37,12 +37,13 @@ class GameDisplay(InstructionGroup):
         self.obstacles = []
         for k, val in level_data.items():
             slice_idx = int(k)
-            obj = obstacle_factory(slice_idx+2, val)
+            obj = obstacle_factory(slice_idx, val)
             self.obstacles.append(obj)
         self.obstacles.sort(key=lambda o: o.slice_idx)
+        self.visible_obstacles = []
 
-        for o in self.obstacles:
-            self.add(o)
+        #for o in self.obstacles:
+            #self.add(o)
 
         self.scroll_x = 0
 
@@ -87,9 +88,22 @@ class GameDisplay(InstructionGroup):
 
     def scroll_world(self, dt):
         self.scroll_x += SCROLL_SPEED * dt
-        for o in self.obstacles:
+        for i, o in enumerate(self.obstacles):
             slice_left_x = o.slice_idx * SLICE_WIDTH - self.scroll_x
-            o.set_position(slice_left_x, GROUND_HEIGHT)
+            #print("CuRRENT SLICE, ", self.scroll_x/SLICE_WIDTH)
+            visible = -SLICE_WIDTH < slice_left_x < Window.width + SLICE_WIDTH
+            if(visible):
+                o.set_position(slice_left_x, GROUND_HEIGHT)
+                if(o not in self.children):
+                    self.add(o)
+                    self.visible_obstacles.append(o)
+                
+                
+            elif not visible and o in self.children:
+                self.remove(o)
+                self.visible_obstacles.remove(o)
+  
+            
 
     def on_update(self, dt):
         if self.level_has_ended:
@@ -142,7 +156,7 @@ class GameDisplay(InstructionGroup):
         vy     = self.player_vel_y
 
         color_under_player = None
-        for obs in self.obstacles:
+        for obs in self.visible_obstacles:
             result = obs.check_collision(px, py, psize, vy)
             if result.ctype == 'spike' or result.ctype == 'side':
                 # immediate death
