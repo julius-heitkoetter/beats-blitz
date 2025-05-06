@@ -92,7 +92,7 @@ class LevelGenerator:
                 # Track note on events
                 elif msg.type == 'note_on':
                     note_event = {
-                        'tick': track_tick,
+                        'tick': track_tick//960 * 48,
                         'time': self._ticks_to_seconds(track_tick, current_tempo),
                         'note': msg.note,
                         'velocity': msg.velocity,
@@ -105,7 +105,7 @@ class LevelGenerator:
                 # Track note off events
                 elif msg.type == 'note_off':
                     note_event = {
-                        'tick': track_tick,
+                        'tick': track_tick//960 * 48,
                         'time': self._ticks_to_seconds(track_tick, current_tempo),
                         'note': msg.note,
                         'velocity': 0,

@@ -1,4 +1,5 @@
-{"Iron": {
+{
+    "Iron": {
         "level_file": "level_data/iron/level_data.json",
         "song_base_path": "level_data/iron/midi_data.json",
         "difficulty": "Easy",
@@ -7,4 +8,15 @@
         "stars_collected": 0,
         "max_score": 100,
         "song_title": "Roy's Journey"
-    }}
+    },
+    "Awakening": {
+        "level_file": "level_data/zelda/obstacles.json",
+        "song_base_path": "level_data/zelda/midi_data.json",
+        "song_title": "Link's Awakening Overworld",
+        "difficulty": "Medium",
+        "target_score": 600,
+        "high_score": 865,
+        "max_score": 1000,
+        "stars_collected": 2
+    }
+}
