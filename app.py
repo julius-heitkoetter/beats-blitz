@@ -301,7 +301,7 @@ class ScoreBoard(RetroLabel):
         )
         if score > self.meta["high_score"]:
             self.meta["high_score"] = score
-            app = App.get_running_app(); save_levels(app.levels)
+            save_levels(App.get_running_app().levels,self.lvl_name)
 
     @staticmethod
     def _stars(score, max_sc):

@@ -1,11 +1,12 @@
 {
-    "Zelda": {
+    "Awakening": {
         "level_file": "level_data/zelda/obstacles.json",
         "song_base_path": "level_data/zelda/midi_data.json",
         "song_title": "Link's Awakening Overworld",
         "difficulty": "Medium",
         "target_score": 600,
         "high_score": 600,
+        "max_score": 1000,
         "stars_collected": 0
     }
 }
