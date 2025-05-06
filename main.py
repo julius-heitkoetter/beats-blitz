@@ -20,13 +20,17 @@ class MainWidget(BaseWidget):
             midi_data = json.load(f)
 
         self.audio_ctrl = AudioController(midi_data)
-        self.audio_ctrl.toggle()
+        
 
         self.display = GameDisplay(level_name, level_data, self.audio_ctrl, screen_manager)
         self.player_ctrl = PlayerController(self.display, self.audio_ctrl)
         self.canvas.add(self.display)
 
-        Clock.schedule_interval(self.update, 1/60.0)
+        self.audio_started = False
+        self.started= False
+        self.counter_until_start = 0
+
+        
 
     def on_key_down(self, keycode, modifiers):
         self.player_ctrl.on_key_down(keycode)
@@ -38,10 +42,19 @@ class MainWidget(BaseWidget):
         self.display.on_resize(win_size)
 
     def update(self, dt):
+        if not self.audio_started:
+            self.audio_ctrl.start()
+            self.audio_started = True
         self.display.on_update(dt)
         self.player_ctrl.on_update(dt)
 
     def on_update(self):
+        if not self.started:
+            self.counter_until_start += 1
+            if self.counter_until_start > 10:
+                self.started = True
+                Clock.schedule_interval(self.update, 1/240.0)
+
         self.audio_ctrl.on_update()
 
 if __name__ == "__main__":

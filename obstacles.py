@@ -280,7 +280,7 @@ class FloatingSquare(Obstacle):
 
         if (player_right > left and player_left < right and
             player_top > bottom and player_bottom < top):
-            epsilon = 5
+            epsilon = 20
             # top collision
             if abs(player_bottom - top) < epsilon and vy <= 0:
                 return CollisionResult('top', color = self.color_value, topY=top)
