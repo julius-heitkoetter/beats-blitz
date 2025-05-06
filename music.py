@@ -21,9 +21,10 @@ class AudioController(object):
 
         
 
-
-
         self.cmd = None
+        self.off_cmd = None
+
+        self.next_note_info = None
         
         self.midi_data = midi_data
 
@@ -57,6 +58,13 @@ class AudioController(object):
         self.channel_synths = {}
 
         self.notes = midi_data.get('notes_by_tick', {})
+        keys =  list(self.notes.keys())
+        #go through the notes which are index by tick in string, and if off by one tick add the contents to previsous tick so it is more unified
+        for tick in keys:
+            tick = int(tick)
+            if str(tick-1) in self.notes:
+                self.notes[str(tick-1)].extend(self.notes[str(tick)])
+                del self.notes[str(tick)]
 
         for channel_id, metadata in self.midi_data.get('channel_metadata', {}).items():
             # Only create synths for channels that are set to play
@@ -105,14 +113,15 @@ class AudioController(object):
             self.channel_synths[channel]['active_notes'].add(note)
             note_off_tick = now + length * 10
                 
-            self.cmd = self.sched.post_at_tick(self._noteoff, note_off_tick, (channel, note))
+            self.off_cmd = self.sched.post_at_tick(self._noteoff, note_off_tick, (channel, note))
         #play next tick index in dictionary
         
         #fidn the next item in the dictionary efficiently
         next_tick = min((int(t) for t in self.notes.keys() if int(t) > tick), default=None)
         #print(next_tick)
         if next_tick is not None:
-            self.cmd = self.sched.post_at_tick(self.play_note_at_tick, now+(next_tick-tick)*10,next_tick)
+            self.next_note_info = [now+(next_tick-tick)*10,next_tick]
+            self.cmd = self.sched.post_at_tick(self.play_note_at_tick, self.next_note_info[0],self.next_note_info[1])
 
     def _noteoff(self, tick, args):
         """
@@ -197,12 +206,19 @@ class AudioController(object):
         """
         Called when the player performs a jump that's in line with the color
         """
+        tick_epsilon = 10
         print("CORRECT JUMP", jump_key, slice_num)
+        self.change_volume(self.main_channels, 0.3)
         now = self.sched.get_tick()
-        print("tick num", now)
+        print(self.next_note_info[0] - now, "is the time until next note")
+        if self.next_note_info[0] - now < 100:
+            #print("jumping to next note")
+            self.sched.cancel(self.cmd)
+            self.cmd = self.sched.post_at_tick(self.play_note_at_tick, now, self.next_note_info[1])
 
     def incorrect_jump_callback(self, jump_key, tick_num):
         """
         Called when the player does not jump correctly
         """
         self.play_miss()
+        self.change_volume(self.main_channels, 0.15)
