@@ -9,7 +9,13 @@ class LevelGenerator:
     def __init__(self, midi_file_path):
         """Initialize the level generator with a MIDI file."""
         self.midi_file = MidiFile(midi_file_path)
-        self.tempo = 397350  # default tempo (microseconds per beat)
+        for track in mid:
+            for msg in track:
+                if msg.type == 'set_tempo':
+                    self.tempo = msg.tempo
+                    break
+        
+        self.tempo = 500000  # default tempo (microseconds per beat)
         self.ticks_per_beat = self.midi_file.ticks_per_beat
         
         # Platform type mappings by octave
