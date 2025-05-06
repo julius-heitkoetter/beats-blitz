@@ -364,11 +364,12 @@ def obstacle_factory(slice_idx, data):
     elif otype == 'tower':
         return Tower(slice_idx, data)
     elif otype == 'towerWithSpikes':
+        data["color"] = (1,1,1) #set spike ones to white
         return TowerWithSpikes(slice_idx, data)
     elif otype == 'floatingSquare':
         return FloatingSquare(slice_idx, data)
     elif otype == 'floatingSquareWithSpikes':
-        data["color"] = (1,1,1) #fo
+        data["color"] = (1,1,1) #set spike ones to white
         return FloatingSquareWithSpikes(slice_idx, data)
     else:
         return Empty(slice_idx, data)

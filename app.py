@@ -261,7 +261,7 @@ class EndOfLevelScreen(Screen):
             meta["high_score"] = score
         if stars > meta["stars_collected"]:
             meta["stars_collected"] = stars
-        save_levels(App.get_running_app().levels,self.lvl_name)
+        save_levels(App.get_running_app().levels,self.level_name)
 
     def _replay(self, *_):
         game = self.manager.get_screen("game")
