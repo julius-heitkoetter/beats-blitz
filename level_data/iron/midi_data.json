@@ -240,6 +240,46 @@
         "velocity": 100,
         "slice": 24,
         "channel": 3
+      },
+      {
+        "start_tick": 384,
+        "start_time": 3.8399999999999994,
+        "end_tick": 384,
+        "end_time": 4.08,
+        "length_ticks": 0,
+        "length_time": 0.24000000000000066,
+        "note": 40,
+        "velocity": 100,
+        "slice": 24,
+        "channel": 9
+      }
+    ],
+    "432": [
+      {
+        "start_tick": 432,
+        "start_time": 4.319999999999999,
+        "end_tick": 432,
+        "end_time": 4.56,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 27,
+        "channel": 9
+      }
+    ],
+    "480": [
+      {
+        "start_tick": 480,
+        "start_time": 4.8,
+        "end_tick": 480,
+        "end_time": 5.04,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 30,
+        "channel": 9
       }
     ],
     "528": [
@@ -266,6 +306,18 @@
         "velocity": 100,
         "slice": 34,
         "channel": 1
+      },
+      {
+        "start_tick": 528,
+        "start_time": 5.28,
+        "end_tick": 528,
+        "end_time": 5.52,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999932,
+        "note": 40,
+        "velocity": 100,
+        "slice": 33,
+        "channel": 9
       }
     ],
     "576": [
@@ -292,6 +344,32 @@
         "velocity": 100,
         "slice": 36,
         "channel": 1
+      },
+      {
+        "start_tick": 576,
+        "start_time": 5.76,
+        "end_tick": 576,
+        "end_time": 6.0,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 36,
+        "channel": 9
+      }
+    ],
+    "624": [
+      {
+        "start_tick": 624,
+        "start_time": 6.239999999999999,
+        "end_tick": 624,
+        "end_time": 6.48,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000011,
+        "note": 40,
+        "velocity": 100,
+        "slice": 39,
+        "channel": 9
       }
     ],
     "672": [
@@ -306,6 +384,44 @@
         "velocity": 100,
         "slice": 42,
         "channel": 2
+      },
+      {
+        "start_tick": 672,
+        "start_time": 6.72,
+        "end_tick": 672,
+        "end_time": 6.959999999999999,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999932,
+        "note": 40,
+        "velocity": 100,
+        "slice": 42,
+        "channel": 9
+      }
+    ],
+    "720": [
+      {
+        "start_tick": 720,
+        "start_time": 7.2,
+        "end_tick": 720,
+        "end_time": 7.4399999999999995,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999932,
+        "note": 40,
+        "velocity": 100,
+        "slice": 45,
+        "channel": 9
+      },
+      {
+        "start_tick": 720,
+        "start_time": 7.4399999999999995,
+        "end_tick": 768,
+        "end_time": 7.679999999999999,
+        "length_ticks": 48,
+        "length_time": 0.23999999999999932,
+        "note": 38,
+        "velocity": 100,
+        "slice": 46,
+        "channel": 9
       }
     ],
     "768": [
@@ -344,6 +460,18 @@
         "velocity": 100,
         "slice": 48,
         "channel": 3
+      },
+      {
+        "start_tick": 768,
+        "start_time": 7.679999999999999,
+        "end_tick": 768,
+        "end_time": 7.92,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000011,
+        "note": 40,
+        "velocity": 100,
+        "slice": 48,
+        "channel": 9
       }
     ],
     "816": [
@@ -370,6 +498,18 @@
         "velocity": 100,
         "slice": 52,
         "channel": 2
+      },
+      {
+        "start_tick": 816,
+        "start_time": 8.16,
+        "end_tick": 816,
+        "end_time": 8.4,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 51,
+        "channel": 9
       }
     ],
     "864": [
@@ -408,6 +548,32 @@
         "velocity": 100,
         "slice": 54,
         "channel": 2
+      },
+      {
+        "start_tick": 864,
+        "start_time": 8.639999999999999,
+        "end_tick": 864,
+        "end_time": 8.879999999999999,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 54,
+        "channel": 9
+      }
+    ],
+    "912": [
+      {
+        "start_tick": 912,
+        "start_time": 9.12,
+        "end_tick": 912,
+        "end_time": 9.360000000000001,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 57,
+        "channel": 9
       }
     ],
     "960": [
@@ -446,6 +612,18 @@
         "velocity": 100,
         "slice": 60,
         "channel": 3
+      },
+      {
+        "start_tick": 960,
+        "start_time": 9.6,
+        "end_tick": 960,
+        "end_time": 9.84,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 60,
+        "channel": 9
       }
     ],
     "1008": [
@@ -472,6 +650,18 @@
         "velocity": 100,
         "slice": 65,
         "channel": 2
+      },
+      {
+        "start_tick": 1008,
+        "start_time": 10.08,
+        "end_tick": 1008,
+        "end_time": 10.319999999999999,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 63,
+        "channel": 9
       }
     ],
     "1056": [
@@ -510,6 +700,44 @@
         "velocity": 100,
         "slice": 66,
         "channel": 2
+      },
+      {
+        "start_tick": 1056,
+        "start_time": 10.56,
+        "end_tick": 1056,
+        "end_time": 10.8,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 66,
+        "channel": 9
+      }
+    ],
+    "1104": [
+      {
+        "start_tick": 1104,
+        "start_time": 11.28,
+        "end_tick": 1104,
+        "end_time": 11.04,
+        "length_ticks": 0,
+        "length_time": -0.2400000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 70,
+        "channel": 9
+      },
+      {
+        "start_tick": 1104,
+        "start_time": 11.04,
+        "end_tick": 1104,
+        "end_time": 11.28,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 69,
+        "channel": 9
       }
     ],
     "1152": [
@@ -548,6 +776,18 @@
         "velocity": 100,
         "slice": 72,
         "channel": 3
+      },
+      {
+        "start_tick": 1152,
+        "start_time": 11.52,
+        "end_tick": 1152,
+        "end_time": 11.76,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 72,
+        "channel": 9
       }
     ],
     "1200": [
@@ -574,6 +814,18 @@
         "velocity": 100,
         "slice": 77,
         "channel": 2
+      },
+      {
+        "start_tick": 1200,
+        "start_time": 12.0,
+        "end_tick": 1200,
+        "end_time": 12.24,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 75,
+        "channel": 9
       }
     ],
     "1248": [
@@ -612,6 +864,44 @@
         "velocity": 100,
         "slice": 78,
         "channel": 2
+      },
+      {
+        "start_tick": 1248,
+        "start_time": 12.479999999999999,
+        "end_tick": 1248,
+        "end_time": 12.719999999999999,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 78,
+        "channel": 9
+      }
+    ],
+    "1296": [
+      {
+        "start_tick": 1296,
+        "start_time": 12.96,
+        "end_tick": 1296,
+        "end_time": 13.2,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 81,
+        "channel": 9
+      },
+      {
+        "start_tick": 1296,
+        "start_time": 13.2,
+        "end_tick": 1344,
+        "end_time": 13.44,
+        "length_ticks": 48,
+        "length_time": 0.2400000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 82,
+        "channel": 9
       }
     ],
     "1344": [
@@ -638,6 +928,18 @@
         "velocity": 100,
         "slice": 84,
         "channel": 2
+      },
+      {
+        "start_tick": 1344,
+        "start_time": 13.44,
+        "end_tick": 1344,
+        "end_time": 13.68,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 84,
+        "channel": 9
       }
     ],
     "1392": [
@@ -664,6 +966,18 @@
         "velocity": 100,
         "slice": 88,
         "channel": 2
+      },
+      {
+        "start_tick": 1392,
+        "start_time": 13.919999999999998,
+        "end_tick": 1392,
+        "end_time": 14.16,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 87,
+        "channel": 9
       }
     ],
     "1440": [
@@ -702,6 +1016,44 @@
         "velocity": 100,
         "slice": 90,
         "channel": 2
+      },
+      {
+        "start_tick": 1440,
+        "start_time": 14.4,
+        "end_tick": 1440,
+        "end_time": 14.639999999999999,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 90,
+        "channel": 9
+      }
+    ],
+    "1488": [
+      {
+        "start_tick": 1488,
+        "start_time": 15.12,
+        "end_tick": 1488,
+        "end_time": 14.879999999999999,
+        "length_ticks": 0,
+        "length_time": -0.2400000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 94,
+        "channel": 9
+      },
+      {
+        "start_tick": 1488,
+        "start_time": 14.879999999999999,
+        "end_tick": 1488,
+        "end_time": 15.12,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 93,
+        "channel": 9
       }
     ],
     "1536": [
@@ -740,6 +1092,18 @@
         "velocity": 100,
         "slice": 96,
         "channel": 3
+      },
+      {
+        "start_tick": 1536,
+        "start_time": 15.359999999999998,
+        "end_tick": 1536,
+        "end_time": 15.6,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 96,
+        "channel": 9
       }
     ],
     "1584": [
@@ -766,6 +1130,18 @@
         "velocity": 100,
         "slice": 100,
         "channel": 2
+      },
+      {
+        "start_tick": 1584,
+        "start_time": 15.84,
+        "end_tick": 1584,
+        "end_time": 16.08,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 99,
+        "channel": 9
       }
     ],
     "1632": [
@@ -804,6 +1180,32 @@
         "velocity": 100,
         "slice": 102,
         "channel": 2
+      },
+      {
+        "start_tick": 1632,
+        "start_time": 16.32,
+        "end_tick": 1632,
+        "end_time": 16.56,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 102,
+        "channel": 9
+      }
+    ],
+    "1680": [
+      {
+        "start_tick": 1680,
+        "start_time": 16.8,
+        "end_tick": 1680,
+        "end_time": 17.04,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 105,
+        "channel": 9
       }
     ],
     "1728": [
@@ -842,6 +1244,18 @@
         "velocity": 100,
         "slice": 108,
         "channel": 3
+      },
+      {
+        "start_tick": 1728,
+        "start_time": 17.279999999999998,
+        "end_tick": 1728,
+        "end_time": 17.52,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 108,
+        "channel": 9
       }
     ],
     "1776": [
@@ -868,6 +1282,18 @@
         "velocity": 100,
         "slice": 113,
         "channel": 2
+      },
+      {
+        "start_tick": 1776,
+        "start_time": 17.759999999999998,
+        "end_tick": 1776,
+        "end_time": 18.0,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 111,
+        "channel": 9
       }
     ],
     "1824": [
@@ -906,6 +1332,44 @@
         "velocity": 100,
         "slice": 114,
         "channel": 2
+      },
+      {
+        "start_tick": 1824,
+        "start_time": 18.24,
+        "end_tick": 1824,
+        "end_time": 18.48,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 114,
+        "channel": 9
+      }
+    ],
+    "1872": [
+      {
+        "start_tick": 1872,
+        "start_time": 18.959999999999997,
+        "end_tick": 1872,
+        "end_time": 18.720000000000002,
+        "length_ticks": 0,
+        "length_time": -0.23999999999999488,
+        "note": 38,
+        "velocity": 100,
+        "slice": 118,
+        "channel": 9
+      },
+      {
+        "start_tick": 1872,
+        "start_time": 18.720000000000002,
+        "end_tick": 1872,
+        "end_time": 18.959999999999997,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 117,
+        "channel": 9
       }
     ],
     "1920": [
@@ -956,6 +1420,18 @@
         "velocity": 100,
         "slice": 120,
         "channel": 3
+      },
+      {
+        "start_tick": 1920,
+        "start_time": 19.2,
+        "end_tick": 1920,
+        "end_time": 19.439999999999998,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 120,
+        "channel": 9
       }
     ],
     "1968": [
@@ -982,6 +1458,18 @@
         "velocity": 100,
         "slice": 124,
         "channel": 2
+      },
+      {
+        "start_tick": 1968,
+        "start_time": 19.68,
+        "end_tick": 1968,
+        "end_time": 19.92,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 123,
+        "channel": 9
       }
     ],
     "2016": [
@@ -1008,6 +1496,44 @@
         "velocity": 100,
         "slice": 126,
         "channel": 2
+      },
+      {
+        "start_tick": 2016,
+        "start_time": 20.16,
+        "end_tick": 2016,
+        "end_time": 20.4,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 126,
+        "channel": 9
+      }
+    ],
+    "2064": [
+      {
+        "start_tick": 2064,
+        "start_time": 20.639999999999997,
+        "end_tick": 2064,
+        "end_time": 20.88,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 129,
+        "channel": 9
+      },
+      {
+        "start_tick": 2064,
+        "start_time": 20.88,
+        "end_tick": 2112,
+        "end_time": 21.12,
+        "length_ticks": 48,
+        "length_time": 0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 130,
+        "channel": 9
       }
     ],
     "2112": [
@@ -1058,6 +1584,32 @@
         "velocity": 100,
         "slice": 132,
         "channel": 3
+      },
+      {
+        "start_tick": 2112,
+        "start_time": 21.12,
+        "end_tick": 2112,
+        "end_time": 21.36,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 132,
+        "channel": 9
+      }
+    ],
+    "2160": [
+      {
+        "start_tick": 2160,
+        "start_time": 21.6,
+        "end_tick": 2160,
+        "end_time": 21.839999999999996,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 135,
+        "channel": 9
       }
     ],
     "2208": [
@@ -1096,6 +1648,44 @@
         "velocity": 100,
         "slice": 138,
         "channel": 2
+      },
+      {
+        "start_tick": 2208,
+        "start_time": 22.08,
+        "end_tick": 2208,
+        "end_time": 22.32,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 138,
+        "channel": 9
+      }
+    ],
+    "2256": [
+      {
+        "start_tick": 2256,
+        "start_time": 22.8,
+        "end_tick": 2256,
+        "end_time": 22.56,
+        "length_ticks": 0,
+        "length_time": -0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 142,
+        "channel": 9
+      },
+      {
+        "start_tick": 2256,
+        "start_time": 22.56,
+        "end_tick": 2256,
+        "end_time": 22.8,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 141,
+        "channel": 9
       }
     ],
     "2304": [
@@ -1146,6 +1736,32 @@
         "velocity": 100,
         "slice": 144,
         "channel": 3
+      },
+      {
+        "start_tick": 2304,
+        "start_time": 23.04,
+        "end_tick": 2304,
+        "end_time": 23.279999999999998,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 144,
+        "channel": 9
+      }
+    ],
+    "2352": [
+      {
+        "start_tick": 2352,
+        "start_time": 23.52,
+        "end_tick": 2352,
+        "end_time": 23.759999999999998,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 147,
+        "channel": 9
       }
     ],
     "2400": [
@@ -1184,6 +1800,18 @@
         "velocity": 100,
         "slice": 150,
         "channel": 2
+      },
+      {
+        "start_tick": 2400,
+        "start_time": 24.0,
+        "end_tick": 2400,
+        "end_time": 24.24,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 150,
+        "channel": 9
       }
     ],
     "2448": [
@@ -1222,6 +1850,18 @@
         "velocity": 100,
         "slice": 153,
         "channel": 2
+      },
+      {
+        "start_tick": 2448,
+        "start_time": 24.48,
+        "end_tick": 2448,
+        "end_time": 24.720000000000002,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 153,
+        "channel": 9
       }
     ],
     "2496": [
@@ -1248,6 +1888,100 @@
         "velocity": 100,
         "slice": 158,
         "channel": 2
+      },
+      {
+        "start_tick": 2496,
+        "start_time": 24.959999999999997,
+        "end_tick": 2496,
+        "end_time": 25.2,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 156,
+        "channel": 9
+      }
+    ],
+    "2544": [
+      {
+        "start_tick": 2544,
+        "start_time": 25.439999999999998,
+        "end_tick": 2544,
+        "end_time": 25.68,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 159,
+        "channel": 9
+      }
+    ],
+    "2592": [
+      {
+        "start_tick": 2592,
+        "start_time": 25.92,
+        "end_tick": 2592,
+        "end_time": 26.16,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 162,
+        "channel": 9
+      }
+    ],
+    "2640": [
+      {
+        "start_tick": 2640,
+        "start_time": 26.639999999999997,
+        "end_tick": 2640,
+        "end_time": 26.4,
+        "length_ticks": 0,
+        "length_time": -0.23999999999999844,
+        "note": 38,
+        "velocity": 100,
+        "slice": 166,
+        "channel": 9
+      },
+      {
+        "start_tick": 2640,
+        "start_time": 26.4,
+        "end_tick": 2640,
+        "end_time": 26.639999999999997,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 165,
+        "channel": 9
+      }
+    ],
+    "2688": [
+      {
+        "start_tick": 2688,
+        "start_time": 26.88,
+        "end_tick": 2688,
+        "end_time": 27.12,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 168,
+        "channel": 9
+      }
+    ],
+    "2736": [
+      {
+        "start_tick": 2736,
+        "start_time": 27.36,
+        "end_tick": 2736,
+        "end_time": 27.6,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 171,
+        "channel": 9
       }
     ],
     "2784": [
@@ -1286,6 +2020,18 @@
         "velocity": 100,
         "slice": 174,
         "channel": 2
+      },
+      {
+        "start_tick": 2784,
+        "start_time": 27.839999999999996,
+        "end_tick": 2784,
+        "end_time": 28.08,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 174,
+        "channel": 9
       }
     ],
     "2832": [
@@ -1324,6 +2070,30 @@
         "velocity": 100,
         "slice": 177,
         "channel": 2
+      },
+      {
+        "start_tick": 2832,
+        "start_time": 28.32,
+        "end_tick": 2832,
+        "end_time": 28.56,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 177,
+        "channel": 9
+      },
+      {
+        "start_tick": 2832,
+        "start_time": 28.56,
+        "end_tick": 2880,
+        "end_time": 28.8,
+        "length_ticks": 48,
+        "length_time": 0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 178,
+        "channel": 9
       }
     ],
     "2880": [
@@ -1350,6 +2120,72 @@
         "velocity": 100,
         "slice": 182,
         "channel": 2
+      },
+      {
+        "start_tick": 2880,
+        "start_time": 28.8,
+        "end_tick": 2880,
+        "end_time": 29.04,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 180,
+        "channel": 9
+      }
+    ],
+    "2928": [
+      {
+        "start_tick": 2928,
+        "start_time": 29.279999999999998,
+        "end_tick": 2928,
+        "end_time": 29.52,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 183,
+        "channel": 9
+      }
+    ],
+    "2976": [
+      {
+        "start_tick": 2976,
+        "start_time": 29.759999999999998,
+        "end_tick": 2976,
+        "end_time": 30.0,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 186,
+        "channel": 9
+      }
+    ],
+    "3024": [
+      {
+        "start_tick": 3024,
+        "start_time": 30.48,
+        "end_tick": 3024,
+        "end_time": 30.24,
+        "length_ticks": 0,
+        "length_time": -0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 190,
+        "channel": 9
+      },
+      {
+        "start_tick": 3024,
+        "start_time": 30.24,
+        "end_tick": 3024,
+        "end_time": 30.48,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 189,
+        "channel": 9
       }
     ],
     "3072": [
@@ -1364,6 +2200,32 @@
         "velocity": 100,
         "slice": 192,
         "channel": 3
+      },
+      {
+        "start_tick": 3072,
+        "start_time": 30.719999999999995,
+        "end_tick": 3072,
+        "end_time": 30.959999999999997,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 192,
+        "channel": 9
+      }
+    ],
+    "3120": [
+      {
+        "start_tick": 3120,
+        "start_time": 31.2,
+        "end_tick": 3120,
+        "end_time": 31.439999999999998,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 195,
+        "channel": 9
       }
     ],
     "3168": [
@@ -1402,6 +2264,18 @@
         "velocity": 100,
         "slice": 198,
         "channel": 2
+      },
+      {
+        "start_tick": 3168,
+        "start_time": 31.68,
+        "end_tick": 3168,
+        "end_time": 31.919999999999998,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999844,
+        "note": 40,
+        "velocity": 100,
+        "slice": 198,
+        "channel": 9
       }
     ],
     "3216": [
@@ -1440,6 +2314,18 @@
         "velocity": 100,
         "slice": 201,
         "channel": 2
+      },
+      {
+        "start_tick": 3216,
+        "start_time": 32.16,
+        "end_tick": 3216,
+        "end_time": 32.4,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 201,
+        "channel": 9
       }
     ],
     "3264": [
@@ -1454,6 +2340,72 @@
         "velocity": 100,
         "slice": 204,
         "channel": 2
+      },
+      {
+        "start_tick": 3264,
+        "start_time": 32.64,
+        "end_tick": 3264,
+        "end_time": 32.88,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 204,
+        "channel": 9
+      }
+    ],
+    "3312": [
+      {
+        "start_tick": 3312,
+        "start_time": 33.12,
+        "end_tick": 3312,
+        "end_time": 33.36,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 207,
+        "channel": 9
+      }
+    ],
+    "3360": [
+      {
+        "start_tick": 3360,
+        "start_time": 33.6,
+        "end_tick": 3360,
+        "end_time": 33.839999999999996,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 210,
+        "channel": 9
+      }
+    ],
+    "3408": [
+      {
+        "start_tick": 3408,
+        "start_time": 34.32,
+        "end_tick": 3408,
+        "end_time": 34.08,
+        "length_ticks": 0,
+        "length_time": -0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 214,
+        "channel": 9
+      },
+      {
+        "start_tick": 3408,
+        "start_time": 34.08,
+        "end_tick": 3408,
+        "end_time": 34.32,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 213,
+        "channel": 9
       }
     ],
     "3456": [
@@ -1480,6 +2432,32 @@
         "velocity": 100,
         "slice": 216,
         "channel": 3
+      },
+      {
+        "start_tick": 3456,
+        "start_time": 34.559999999999995,
+        "end_tick": 3456,
+        "end_time": 34.8,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 216,
+        "channel": 9
+      }
+    ],
+    "3504": [
+      {
+        "start_tick": 3504,
+        "start_time": 35.04,
+        "end_tick": 3504,
+        "end_time": 35.279999999999994,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 219,
+        "channel": 9
       }
     ],
     "3552": [
@@ -1506,6 +2484,18 @@
         "velocity": 100,
         "slice": 222,
         "channel": 2
+      },
+      {
+        "start_tick": 3552,
+        "start_time": 35.519999999999996,
+        "end_tick": 3552,
+        "end_time": 35.76,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 222,
+        "channel": 9
       }
     ],
     "3600": [
@@ -1532,6 +2522,30 @@
         "velocity": 100,
         "slice": 225,
         "channel": 2
+      },
+      {
+        "start_tick": 3600,
+        "start_time": 36.0,
+        "end_tick": 3600,
+        "end_time": 36.24,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 225,
+        "channel": 9
+      },
+      {
+        "start_tick": 3600,
+        "start_time": 36.24,
+        "end_tick": 3648,
+        "end_time": 36.48,
+        "length_ticks": 48,
+        "length_time": 0.23999999999999488,
+        "note": 38,
+        "velocity": 100,
+        "slice": 226,
+        "channel": 9
       }
     ],
     "3648": [
@@ -1570,6 +2584,18 @@
         "velocity": 100,
         "slice": 228,
         "channel": 2
+      },
+      {
+        "start_tick": 3648,
+        "start_time": 36.48,
+        "end_tick": 3648,
+        "end_time": 36.72,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 228,
+        "channel": 9
       }
     ],
     "3696": [
@@ -1584,6 +2610,58 @@
         "velocity": 127,
         "slice": 232,
         "channel": 0
+      },
+      {
+        "start_tick": 3696,
+        "start_time": 36.96,
+        "end_tick": 3696,
+        "end_time": 37.2,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 231,
+        "channel": 9
+      }
+    ],
+    "3744": [
+      {
+        "start_tick": 3744,
+        "start_time": 37.440000000000005,
+        "end_tick": 3744,
+        "end_time": 37.67999999999999,
+        "length_ticks": 0,
+        "length_time": 0.23999999999998778,
+        "note": 40,
+        "velocity": 100,
+        "slice": 234,
+        "channel": 9
+      }
+    ],
+    "3792": [
+      {
+        "start_tick": 3792,
+        "start_time": 38.16,
+        "end_tick": 3792,
+        "end_time": 37.919999999999995,
+        "length_ticks": 0,
+        "length_time": -0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 238,
+        "channel": 9
+      },
+      {
+        "start_tick": 3792,
+        "start_time": 37.919999999999995,
+        "end_tick": 3792,
+        "end_time": 38.16,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 237,
+        "channel": 9
       }
     ],
     "3840": [
@@ -1622,6 +2700,18 @@
         "velocity": 100,
         "slice": 240,
         "channel": 3
+      },
+      {
+        "start_tick": 3840,
+        "start_time": 38.4,
+        "end_tick": 3840,
+        "end_time": 38.64,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 240,
+        "channel": 9
       }
     ],
     "3888": [
@@ -1648,6 +2738,18 @@
         "velocity": 100,
         "slice": 244,
         "channel": 2
+      },
+      {
+        "start_tick": 3888,
+        "start_time": 38.879999999999995,
+        "end_tick": 3888,
+        "end_time": 39.12,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 243,
+        "channel": 9
       }
     ],
     "3936": [
@@ -1686,6 +2788,32 @@
         "velocity": 100,
         "slice": 246,
         "channel": 2
+      },
+      {
+        "start_tick": 3936,
+        "start_time": 39.36,
+        "end_tick": 3936,
+        "end_time": 39.6,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 246,
+        "channel": 9
+      }
+    ],
+    "3984": [
+      {
+        "start_tick": 3984,
+        "start_time": 39.84,
+        "end_tick": 3984,
+        "end_time": 40.08,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 249,
+        "channel": 9
       }
     ],
     "4032": [
@@ -1724,6 +2852,18 @@
         "velocity": 100,
         "slice": 252,
         "channel": 3
+      },
+      {
+        "start_tick": 4032,
+        "start_time": 40.32,
+        "end_tick": 4032,
+        "end_time": 40.559999999999995,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 252,
+        "channel": 9
       }
     ],
     "4080": [
@@ -1750,6 +2890,18 @@
         "velocity": 100,
         "slice": 257,
         "channel": 2
+      },
+      {
+        "start_tick": 4080,
+        "start_time": 40.8,
+        "end_tick": 4080,
+        "end_time": 41.04,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 255,
+        "channel": 9
       }
     ],
     "4128": [
@@ -1788,6 +2940,44 @@
         "velocity": 100,
         "slice": 258,
         "channel": 2
+      },
+      {
+        "start_tick": 4128,
+        "start_time": 41.279999999999994,
+        "end_tick": 4128,
+        "end_time": 41.519999999999996,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 258,
+        "channel": 9
+      }
+    ],
+    "4176": [
+      {
+        "start_tick": 4176,
+        "start_time": 42.0,
+        "end_tick": 4176,
+        "end_time": 41.76,
+        "length_ticks": 0,
+        "length_time": -0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 262,
+        "channel": 9
+      },
+      {
+        "start_tick": 4176,
+        "start_time": 41.76,
+        "end_tick": 4176,
+        "end_time": 42.0,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 261,
+        "channel": 9
       }
     ],
     "4224": [
@@ -1826,6 +3016,18 @@
         "velocity": 100,
         "slice": 264,
         "channel": 3
+      },
+      {
+        "start_tick": 4224,
+        "start_time": 42.24,
+        "end_tick": 4224,
+        "end_time": 42.48,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 264,
+        "channel": 9
       }
     ],
     "4272": [
@@ -1852,6 +3054,18 @@
         "velocity": 100,
         "slice": 269,
         "channel": 2
+      },
+      {
+        "start_tick": 4272,
+        "start_time": 42.72,
+        "end_tick": 4272,
+        "end_time": 42.96,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 267,
+        "channel": 9
       }
     ],
     "4320": [
@@ -1890,6 +3104,44 @@
         "velocity": 100,
         "slice": 270,
         "channel": 2
+      },
+      {
+        "start_tick": 4320,
+        "start_time": 43.2,
+        "end_tick": 4320,
+        "end_time": 43.440000000000005,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 270,
+        "channel": 9
+      }
+    ],
+    "4368": [
+      {
+        "start_tick": 4368,
+        "start_time": 43.67999999999999,
+        "end_tick": 4368,
+        "end_time": 43.919999999999995,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 273,
+        "channel": 9
+      },
+      {
+        "start_tick": 4368,
+        "start_time": 43.919999999999995,
+        "end_tick": 4416,
+        "end_time": 44.16,
+        "length_ticks": 48,
+        "length_time": 0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 274,
+        "channel": 9
       }
     ],
     "4416": [
@@ -1916,6 +3168,18 @@
         "velocity": 100,
         "slice": 276,
         "channel": 2
+      },
+      {
+        "start_tick": 4416,
+        "start_time": 44.16,
+        "end_tick": 4416,
+        "end_time": 44.4,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 276,
+        "channel": 9
       }
     ],
     "4464": [
@@ -1942,6 +3206,18 @@
         "velocity": 100,
         "slice": 280,
         "channel": 2
+      },
+      {
+        "start_tick": 4464,
+        "start_time": 44.64,
+        "end_tick": 4464,
+        "end_time": 44.879999999999995,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 279,
+        "channel": 9
       }
     ],
     "4512": [
@@ -1980,6 +3256,44 @@
         "velocity": 100,
         "slice": 282,
         "channel": 2
+      },
+      {
+        "start_tick": 4512,
+        "start_time": 45.12,
+        "end_tick": 4512,
+        "end_time": 45.36,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 282,
+        "channel": 9
+      }
+    ],
+    "4560": [
+      {
+        "start_tick": 4560,
+        "start_time": 45.84,
+        "end_tick": 4560,
+        "end_time": 45.6,
+        "length_ticks": 0,
+        "length_time": -0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 286,
+        "channel": 9
+      },
+      {
+        "start_tick": 4560,
+        "start_time": 45.6,
+        "end_tick": 4560,
+        "end_time": 45.84,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 285,
+        "channel": 9
       }
     ],
     "4608": [
@@ -2018,6 +3332,18 @@
         "velocity": 100,
         "slice": 288,
         "channel": 3
+      },
+      {
+        "start_tick": 4608,
+        "start_time": 46.08,
+        "end_tick": 4608,
+        "end_time": 46.32,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 288,
+        "channel": 9
       }
     ],
     "4656": [
@@ -2044,6 +3370,18 @@
         "velocity": 100,
         "slice": 292,
         "channel": 2
+      },
+      {
+        "start_tick": 4656,
+        "start_time": 46.559999999999995,
+        "end_tick": 4656,
+        "end_time": 46.8,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 291,
+        "channel": 9
       }
     ],
     "4704": [
@@ -2082,6 +3420,32 @@
         "velocity": 100,
         "slice": 294,
         "channel": 2
+      },
+      {
+        "start_tick": 4704,
+        "start_time": 47.04,
+        "end_tick": 4704,
+        "end_time": 47.279999999999994,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 294,
+        "channel": 9
+      }
+    ],
+    "4752": [
+      {
+        "start_tick": 4752,
+        "start_time": 47.519999999999996,
+        "end_tick": 4752,
+        "end_time": 47.76,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 297,
+        "channel": 9
       }
     ],
     "4800": [
@@ -2120,6 +3484,18 @@
         "velocity": 100,
         "slice": 300,
         "channel": 3
+      },
+      {
+        "start_tick": 4800,
+        "start_time": 48.0,
+        "end_tick": 4800,
+        "end_time": 48.24,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 300,
+        "channel": 9
       }
     ],
     "4848": [
@@ -2146,6 +3522,18 @@
         "velocity": 100,
         "slice": 305,
         "channel": 2
+      },
+      {
+        "start_tick": 4848,
+        "start_time": 48.48,
+        "end_tick": 4848,
+        "end_time": 48.72,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 303,
+        "channel": 9
       }
     ],
     "4896": [
@@ -2184,6 +3572,44 @@
         "velocity": 100,
         "slice": 306,
         "channel": 2
+      },
+      {
+        "start_tick": 4896,
+        "start_time": 48.96,
+        "end_tick": 4896,
+        "end_time": 49.2,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 306,
+        "channel": 9
+      }
+    ],
+    "4944": [
+      {
+        "start_tick": 4944,
+        "start_time": 49.67999999999999,
+        "end_tick": 4944,
+        "end_time": 49.440000000000005,
+        "length_ticks": 0,
+        "length_time": -0.23999999999998778,
+        "note": 38,
+        "velocity": 100,
+        "slice": 310,
+        "channel": 9
+      },
+      {
+        "start_tick": 4944,
+        "start_time": 49.440000000000005,
+        "end_tick": 4944,
+        "end_time": 49.67999999999999,
+        "length_ticks": 0,
+        "length_time": 0.23999999999998778,
+        "note": 40,
+        "velocity": 100,
+        "slice": 309,
+        "channel": 9
       }
     ],
     "4992": [
@@ -2234,6 +3660,18 @@
         "velocity": 100,
         "slice": 312,
         "channel": 3
+      },
+      {
+        "start_tick": 4992,
+        "start_time": 49.919999999999995,
+        "end_tick": 4992,
+        "end_time": 50.16,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 312,
+        "channel": 9
       }
     ],
     "5040": [
@@ -2260,6 +3698,18 @@
         "velocity": 100,
         "slice": 316,
         "channel": 2
+      },
+      {
+        "start_tick": 5040,
+        "start_time": 50.4,
+        "end_tick": 5040,
+        "end_time": 50.64,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 315,
+        "channel": 9
       }
     ],
     "5088": [
@@ -2286,6 +3736,44 @@
         "velocity": 100,
         "slice": 318,
         "channel": 2
+      },
+      {
+        "start_tick": 5088,
+        "start_time": 50.879999999999995,
+        "end_tick": 5088,
+        "end_time": 51.12,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 318,
+        "channel": 9
+      }
+    ],
+    "5136": [
+      {
+        "start_tick": 5136,
+        "start_time": 51.36,
+        "end_tick": 5136,
+        "end_time": 51.6,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 321,
+        "channel": 9
+      },
+      {
+        "start_tick": 5136,
+        "start_time": 51.6,
+        "end_tick": 5184,
+        "end_time": 51.84,
+        "length_ticks": 48,
+        "length_time": 0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 322,
+        "channel": 9
       }
     ],
     "5184": [
@@ -2336,6 +3824,32 @@
         "velocity": 100,
         "slice": 324,
         "channel": 3
+      },
+      {
+        "start_tick": 5184,
+        "start_time": 51.84,
+        "end_tick": 5184,
+        "end_time": 52.08,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 324,
+        "channel": 9
+      }
+    ],
+    "5232": [
+      {
+        "start_tick": 5232,
+        "start_time": 52.32,
+        "end_tick": 5232,
+        "end_time": 52.559999999999995,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 327,
+        "channel": 9
       }
     ],
     "5280": [
@@ -2374,6 +3888,44 @@
         "velocity": 100,
         "slice": 330,
         "channel": 2
+      },
+      {
+        "start_tick": 5280,
+        "start_time": 52.8,
+        "end_tick": 5280,
+        "end_time": 53.04,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 330,
+        "channel": 9
+      }
+    ],
+    "5328": [
+      {
+        "start_tick": 5328,
+        "start_time": 53.519999999999996,
+        "end_tick": 5328,
+        "end_time": 53.279999999999994,
+        "length_ticks": 0,
+        "length_time": -0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 334,
+        "channel": 9
+      },
+      {
+        "start_tick": 5328,
+        "start_time": 53.279999999999994,
+        "end_tick": 5328,
+        "end_time": 53.519999999999996,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 333,
+        "channel": 9
       }
     ],
     "5376": [
@@ -2424,6 +3976,32 @@
         "velocity": 100,
         "slice": 336,
         "channel": 3
+      },
+      {
+        "start_tick": 5376,
+        "start_time": 53.76,
+        "end_tick": 5376,
+        "end_time": 54.0,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 336,
+        "channel": 9
+      }
+    ],
+    "5424": [
+      {
+        "start_tick": 5424,
+        "start_time": 54.24,
+        "end_tick": 5424,
+        "end_time": 54.48,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 339,
+        "channel": 9
       }
     ],
     "5472": [
@@ -2462,6 +4040,18 @@
         "velocity": 100,
         "slice": 342,
         "channel": 2
+      },
+      {
+        "start_tick": 5472,
+        "start_time": 54.72,
+        "end_tick": 5472,
+        "end_time": 54.96,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 342,
+        "channel": 9
       }
     ],
     "5520": [
@@ -2500,6 +4090,18 @@
         "velocity": 100,
         "slice": 345,
         "channel": 2
+      },
+      {
+        "start_tick": 5520,
+        "start_time": 55.2,
+        "end_tick": 5520,
+        "end_time": 55.440000000000005,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 345,
+        "channel": 9
       }
     ],
     "5568": [
@@ -2526,6 +4128,100 @@
         "velocity": 100,
         "slice": 350,
         "channel": 2
+      },
+      {
+        "start_tick": 5568,
+        "start_time": 55.67999999999999,
+        "end_tick": 5568,
+        "end_time": 55.919999999999995,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 348,
+        "channel": 9
+      }
+    ],
+    "5616": [
+      {
+        "start_tick": 5616,
+        "start_time": 56.16,
+        "end_tick": 5616,
+        "end_time": 56.4,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 351,
+        "channel": 9
+      }
+    ],
+    "5664": [
+      {
+        "start_tick": 5664,
+        "start_time": 56.64,
+        "end_tick": 5664,
+        "end_time": 56.879999999999995,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 354,
+        "channel": 9
+      }
+    ],
+    "5712": [
+      {
+        "start_tick": 5712,
+        "start_time": 57.36,
+        "end_tick": 5712,
+        "end_time": 57.12,
+        "length_ticks": 0,
+        "length_time": -0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 358,
+        "channel": 9
+      },
+      {
+        "start_tick": 5712,
+        "start_time": 57.12,
+        "end_tick": 5712,
+        "end_time": 57.36,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 357,
+        "channel": 9
+      }
+    ],
+    "5760": [
+      {
+        "start_tick": 5760,
+        "start_time": 57.6,
+        "end_tick": 5760,
+        "end_time": 57.84,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 360,
+        "channel": 9
+      }
+    ],
+    "5808": [
+      {
+        "start_tick": 5808,
+        "start_time": 58.08,
+        "end_tick": 5808,
+        "end_time": 58.32,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 363,
+        "channel": 9
       }
     ],
     "5856": [
@@ -2564,6 +4260,18 @@
         "velocity": 100,
         "slice": 366,
         "channel": 2
+      },
+      {
+        "start_tick": 5856,
+        "start_time": 58.559999999999995,
+        "end_tick": 5856,
+        "end_time": 58.8,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 366,
+        "channel": 9
       }
     ],
     "5904": [
@@ -2602,6 +4310,30 @@
         "velocity": 100,
         "slice": 369,
         "channel": 2
+      },
+      {
+        "start_tick": 5904,
+        "start_time": 59.04,
+        "end_tick": 5904,
+        "end_time": 59.279999999999994,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 369,
+        "channel": 9
+      },
+      {
+        "start_tick": 5904,
+        "start_time": 59.279999999999994,
+        "end_tick": 5952,
+        "end_time": 59.519999999999996,
+        "length_ticks": 48,
+        "length_time": 0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 370,
+        "channel": 9
       }
     ],
     "5952": [
@@ -2628,6 +4360,72 @@
         "velocity": 100,
         "slice": 374,
         "channel": 2
+      },
+      {
+        "start_tick": 5952,
+        "start_time": 59.519999999999996,
+        "end_tick": 5952,
+        "end_time": 59.76,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 372,
+        "channel": 9
+      }
+    ],
+    "6000": [
+      {
+        "start_tick": 6000,
+        "start_time": 60.0,
+        "end_tick": 6000,
+        "end_time": 60.24,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 375,
+        "channel": 9
+      }
+    ],
+    "6048": [
+      {
+        "start_tick": 6048,
+        "start_time": 60.48,
+        "end_tick": 6048,
+        "end_time": 60.72,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 378,
+        "channel": 9
+      }
+    ],
+    "6096": [
+      {
+        "start_tick": 6096,
+        "start_time": 61.2,
+        "end_tick": 6096,
+        "end_time": 60.96,
+        "length_ticks": 0,
+        "length_time": -0.240000000000002,
+        "note": 38,
+        "velocity": 100,
+        "slice": 382,
+        "channel": 9
+      },
+      {
+        "start_tick": 6096,
+        "start_time": 60.96,
+        "end_tick": 6096,
+        "end_time": 61.2,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 381,
+        "channel": 9
       }
     ],
     "6144": [
@@ -2642,6 +4440,32 @@
         "velocity": 100,
         "slice": 384,
         "channel": 3
+      },
+      {
+        "start_tick": 6144,
+        "start_time": 61.43999999999999,
+        "end_tick": 6144,
+        "end_time": 61.67999999999999,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 384,
+        "channel": 9
+      }
+    ],
+    "6192": [
+      {
+        "start_tick": 6192,
+        "start_time": 61.919999999999995,
+        "end_tick": 6192,
+        "end_time": 62.16,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 387,
+        "channel": 9
       }
     ],
     "6240": [
@@ -2680,6 +4504,18 @@
         "velocity": 100,
         "slice": 390,
         "channel": 2
+      },
+      {
+        "start_tick": 6240,
+        "start_time": 62.4,
+        "end_tick": 6240,
+        "end_time": 62.63999999999999,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 390,
+        "channel": 9
       }
     ],
     "6288": [
@@ -2718,6 +4554,18 @@
         "velocity": 100,
         "slice": 393,
         "channel": 2
+      },
+      {
+        "start_tick": 6288,
+        "start_time": 62.879999999999995,
+        "end_tick": 6288,
+        "end_time": 63.12,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 393,
+        "channel": 9
       }
     ],
     "6336": [
@@ -2732,6 +4580,72 @@
         "velocity": 100,
         "slice": 396,
         "channel": 2
+      },
+      {
+        "start_tick": 6336,
+        "start_time": 63.36,
+        "end_tick": 6336,
+        "end_time": 63.6,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 396,
+        "channel": 9
+      }
+    ],
+    "6384": [
+      {
+        "start_tick": 6384,
+        "start_time": 63.839999999999996,
+        "end_tick": 6384,
+        "end_time": 64.08,
+        "length_ticks": 0,
+        "length_time": 0.240000000000002,
+        "note": 40,
+        "velocity": 100,
+        "slice": 399,
+        "channel": 9
+      }
+    ],
+    "6432": [
+      {
+        "start_tick": 6432,
+        "start_time": 64.32,
+        "end_tick": 6432,
+        "end_time": 64.56,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000091,
+        "note": 40,
+        "velocity": 100,
+        "slice": 402,
+        "channel": 9
+      }
+    ],
+    "6480": [
+      {
+        "start_tick": 6480,
+        "start_time": 65.03999999999999,
+        "end_tick": 6480,
+        "end_time": 64.8,
+        "length_ticks": 0,
+        "length_time": -0.23999999999999488,
+        "note": 38,
+        "velocity": 100,
+        "slice": 406,
+        "channel": 9
+      },
+      {
+        "start_tick": 6480,
+        "start_time": 64.8,
+        "end_tick": 6480,
+        "end_time": 65.03999999999999,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 405,
+        "channel": 9
       }
     ],
     "6528": [
@@ -2758,6 +4672,32 @@
         "velocity": 100,
         "slice": 408,
         "channel": 3
+      },
+      {
+        "start_tick": 6528,
+        "start_time": 65.28,
+        "end_tick": 6528,
+        "end_time": 65.52,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 408,
+        "channel": 9
+      }
+    ],
+    "6576": [
+      {
+        "start_tick": 6576,
+        "start_time": 65.76,
+        "end_tick": 6576,
+        "end_time": 66.0,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 411,
+        "channel": 9
       }
     ],
     "6624": [
@@ -2784,6 +4724,18 @@
         "velocity": 100,
         "slice": 414,
         "channel": 2
+      },
+      {
+        "start_tick": 6624,
+        "start_time": 66.24,
+        "end_tick": 6624,
+        "end_time": 66.47999999999999,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 414,
+        "channel": 9
       }
     ],
     "6672": [
@@ -2810,6 +4762,30 @@
         "velocity": 100,
         "slice": 417,
         "channel": 2
+      },
+      {
+        "start_tick": 6672,
+        "start_time": 66.72,
+        "end_tick": 6672,
+        "end_time": 66.96,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 417,
+        "channel": 9
+      },
+      {
+        "start_tick": 6672,
+        "start_time": 66.96,
+        "end_tick": 6720,
+        "end_time": 67.2,
+        "length_ticks": 48,
+        "length_time": 0.2400000000000091,
+        "note": 38,
+        "velocity": 100,
+        "slice": 418,
+        "channel": 9
       }
     ],
     "6720": [
@@ -2848,6 +4824,18 @@
         "velocity": 100,
         "slice": 420,
         "channel": 2
+      },
+      {
+        "start_tick": 6720,
+        "start_time": 67.2,
+        "end_tick": 6720,
+        "end_time": 67.44,
+        "length_ticks": 0,
+        "length_time": 0.23999999999999488,
+        "note": 40,
+        "velocity": 100,
+        "slice": 420,
+        "channel": 9
       }
     ],
     "6768": [
@@ -2862,6 +4850,58 @@
         "velocity": 127,
         "slice": 424,
         "channel": 0
+      },
+      {
+        "start_tick": 6768,
+        "start_time": 67.67999999999999,
+        "end_tick": 6768,
+        "end_time": 67.92,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000091,
+        "note": 40,
+        "velocity": 100,
+        "slice": 423,
+        "channel": 9
+      }
+    ],
+    "6816": [
+      {
+        "start_tick": 6816,
+        "start_time": 68.16,
+        "end_tick": 6816,
+        "end_time": 68.4,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000091,
+        "note": 40,
+        "velocity": 100,
+        "slice": 426,
+        "channel": 9
+      }
+    ],
+    "6864": [
+      {
+        "start_tick": 6864,
+        "start_time": 68.88000000000001,
+        "end_tick": 6864,
+        "end_time": 68.64,
+        "length_ticks": 0,
+        "length_time": -0.2400000000000091,
+        "note": 38,
+        "velocity": 100,
+        "slice": 431,
+        "channel": 9
+      },
+      {
+        "start_tick": 6864,
+        "start_time": 68.64,
+        "end_tick": 6864,
+        "end_time": 68.88000000000001,
+        "length_ticks": 0,
+        "length_time": 0.2400000000000091,
+        "note": 40,
+        "velocity": 100,
+        "slice": 429,
+        "channel": 9
       }
     ]
   },
@@ -2873,12 +4913,12 @@
     },
     "1": {
       "program": 48,
-      "mute_track": 0,
+      "mute_track": 1,
       "play_track": 1
     },
     "2": {
       "program": 60,
-      "mute_track": 0,
+      "mute_track": 1,
       "play_track": 1
     },
     "3": {
@@ -2899,52 +4939,52 @@
     "6": {
       "program": 0,
       "mute_track": 0,
-      "play_track": 1
+      "play_track": 0
     },
     "5": {
       "program": 0,
       "mute_track": 0,
-      "play_track": 1
+      "play_track": 0
     },
     "7": {
       "program": 0,
       "mute_track": 0,
-      "play_track": 1
+      "play_track": 0
     },
     "8": {
       "program": 0,
       "mute_track": 0,
-      "play_track": 1
+      "play_track": 0
     },
     "10": {
       "program": 0,
       "mute_track": 0,
-      "play_track": 1
+      "play_track": 0
     },
     "11": {
       "program": 0,
       "mute_track": 0,
-      "play_track": 1
+      "play_track": 0
     },
     "12": {
       "program": 0,
       "mute_track": 0,
-      "play_track": 1
+      "play_track": 0
     },
     "13": {
       "program": 0,
       "mute_track": 0,
-      "play_track": 1
+      "play_track": 0
     },
     "14": {
       "program": 0,
       "mute_track": 0,
-      "play_track": 1
+      "play_track": 0
     },
     "15": {
       "program": 0,
       "mute_track": 0,
-      "play_track": 1
+      "play_track": 0
     }
   },
   "tempo_changes": [

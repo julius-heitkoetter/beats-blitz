@@ -9,6 +9,7 @@ class LevelGenerator:
     def __init__(self, midi_file_path):
         """Initialize the level generator with a MIDI file."""
         self.midi_file = MidiFile(midi_file_path)
+        print(self.midi_file)
         for track in self.midi_file.tracks:
             for msg in track:
                 if msg.type == 'set_tempo':
@@ -38,8 +39,7 @@ class LevelGenerator:
         
     def _ticks_to_seconds(self, ticks, tempo=None):
         """Convert MIDI ticks to seconds based on tempo."""
-        if tempo is None:
-            tempo = self.tempo
+        tempo = 480000
         return ticks * (tempo / 1000000.0) / self.ticks_per_beat
     
     def time_to_slice(self, time):
@@ -101,6 +101,7 @@ class LevelGenerator:
                         'type': 'on' if msg.velocity > 0 else 'off'
                     }
                     all_notes.append(note_event)
+                    print("note on event ", msg.channel)
                 
                 # Track note off events
                 elif msg.type == 'note_off':
@@ -125,13 +126,16 @@ class LevelGenerator:
             channel = event['channel']
             note = event['note']
             key = (channel, note)
-            
+            #print(key)
             if channel not in channel_notes:
                 channel_notes[channel] = []
+                print(channel)
+
             
             if event['type'] == 'on' and event['velocity'] > 0:
                 # Note on event - add to active notes
                 active_notes[key] = event
+                
             
             elif event['type'] == 'off' or (event['type'] == 'on' and event['velocity'] == 0):
                 # Note off event - check if we have a matching note on
@@ -139,9 +143,10 @@ class LevelGenerator:
                     note_on = active_notes[key]
                     note_length_ticks = event['tick'] - note_on['tick']
                     note_length_time = event['time'] - note_on['time']
+
                     
                     # Skip very short notes (likely errors or artifacts)
-                    if note_length_ticks > 0:
+                    if note_length_ticks > 0 or channel==6 or channel==9:
                         # Create a complete note event
                         complete_note = {
                             'start_tick': note_on['tick'],
@@ -155,7 +160,7 @@ class LevelGenerator:
                             'slice': self.time_to_slice(note_on['time'])
                         }
                         channel_notes[channel].append(complete_note)
-                    
+
                     # Remove from active notes
                     del active_notes[key]
         
@@ -174,7 +179,7 @@ class LevelGenerator:
                 'mute_track': 0,  # Default to not muted
                 'play_track': 1   # Default to play track
             }
-        
+        #print(channel_notes)
         return {
             'channel_notes': channel_notes,
             'channel_metadata': channel_metadata,
@@ -219,6 +224,7 @@ class LevelGenerator:
         """Generate level data from MIDI notes."""
         midi_data = self.extract_midi_data()
         level_data = {}
+        #print(midi_data)
         
         # If no platform channel specified, use the last channel that has notes
         if platform_channel is None:
@@ -236,8 +242,9 @@ class LevelGenerator:
         
         # Create level data for each note in the platform channel
         for note in midi_data['channel_notes'][platform_channel]:
-            slice_num = note['slice']
             
+            slice_num = note['slice']
+            print("CHANNEL 6 note ", note)
             # Get platform type based on MIDI note
             platform_type = self.get_platform_type(note['note'], note['velocity'])
             

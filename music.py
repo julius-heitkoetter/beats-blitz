@@ -56,6 +56,7 @@ class AudioController(object):
         self.main_channels = []
         self.background_channels = []
         self.channel_synths = {}
+        self.bass_channels  = [9]
 
         self.notes = midi_data.get('notes_by_tick', {})
         keys =  list(self.notes.keys())
@@ -72,6 +73,9 @@ class AudioController(object):
                 channel = int(channel_id)
                 program = metadata.get('program', 0)
                 bank = 0  # Default bank
+
+                if program == 32:
+                    self.bass_channels.append(channel) #add to bass channels
                 
                 # Set the program (instrument sound) for this channel
                 self.synth.program(channel, bank, program)
@@ -87,9 +91,10 @@ class AudioController(object):
                     self.main_channels.append(channel)
                 else:
                     self.background_channels.append(channel)
+            self.synth.program(9, 128, 0)
         self.change_volume(self.background_channels,0.2) #set volume of main channels to 60%
         self.change_volume(self.main_channels, 0.3) #set volume of main channels to 60%
-
+        self.change_volume(self.bass_channels, 0.5) #set volume of main channels to 60%
     def change_volume(self, channels, volume):
         """
         Change the volume of the specified channels.
@@ -191,7 +196,8 @@ class AudioController(object):
         Called when the player dies
         """
         self.change_volume(self.main_channels, 0.05) #mute main channels
-        self.change_volume(self.background_channels, 0.2) #mute main channels
+        self.change_volume(self.background_channels, 0.2) #keep background
+        self.change_volume(self.bass_channels, 0.5)
 
     def ressurection_callback(self):
         """
@@ -199,6 +205,7 @@ class AudioController(object):
         """
         self.change_volume(self.main_channels, 0.3) #mute main channels
         self.change_volume(self.background_channels, 0.2) #mute main channels
+        self.change_volume(self.bass_channels, 0.5)
 
     def correct_jump_callback(self, jump_key, slice_num):
         """
@@ -208,11 +215,11 @@ class AudioController(object):
         print("CORRECT JUMP", jump_key, slice_num)
         self.change_volume(self.main_channels, 0.3)
         now = self.sched.get_tick()
-        if(self.next_note_info is None):
+        if(self.next_note_info is not None):
             if self.next_note_info[0] - now < tick_epsilon:
-                #print("jumping to next note")
+                #jumping to next note#
                 self.sched.cancel(self.cmd)
-                self.cmd = self.sched.post_at_tick(self.play_note_at_tick, now, self.next_note_info[1])
+                self.play_note_at_tick(now, self.next_note_info[1])
 
     def incorrect_jump_callback(self, jump_key, tick_num):
         """
