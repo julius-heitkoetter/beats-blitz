@@ -193,6 +193,84 @@ class LevelSelectScreen(Screen):
         self.manager.get_screen("game").load_level(self.selected, meta)
         self.manager.current = "game"
 
+# ───────────────────────── END‑OF‑LEVEL (results) SCREEN ─────────────────────────
+class EndOfLevelScreen(Screen):
+    """
+    Shown when a level finishes.  Displays score / stars and lets the
+    player replay or pick a new level.
+    """
+    def __init__(self, **kw):
+        super().__init__(name="end", **kw)
+        self.base = RelativeLayout(); self.add_widget(self.base)
+
+        self.levels = App.get_running_app().levels
+
+        # background
+        with self.canvas.before:
+            Color(*PALETTE["bg"]); Rectangle(size=Window.size)
+        Window.bind(size=lambda *_: self._resize_bg())
+
+        # headline
+        self.head = RetroLabel(text="[b]LEVEL  COMPLETE[/b]",
+                               font_size="48sp",
+                               pos_hint={"center_x": .5, "top": 1.3})
+        self.base.add_widget(self.head)
+
+        # score / info block
+        self.info = RetroLabel(text="", halign="center", valign="middle",
+                               font_size="22sp",
+                               size_hint=(.8, .4),
+                               pos_hint={"center_x": .5, "center_y": .55})
+        self.info.bind(size=lambda *_: self.info.texture_update())
+        self.base.add_widget(self.info)
+
+        # buttons
+        self.replay_btn = RetroButton(text="PLAY AGAIN",
+                                      size=(260, 80), size_hint=(None, None),
+                                      pos_hint={"x": .15, "y": .15})
+        self.replay_btn.bind(on_release=self._replay)
+        self.base.add_widget(self.replay_btn)
+
+        self.levels_btn = RetroButton(text="LEVEL  SELECT",
+                                      size=(260, 80), size_hint=(None, None),
+                                      pos_hint={"right": .85, "y": .15})
+        self.levels_btn.bind(on_release=self._to_levels)
+        self.base.add_widget(self.levels_btn)
+
+    def _resize_bg(self):
+        # resize background rect (it's the only Rectangle in canvas.before)
+        self.canvas.before.children[-1].size = Window.size
+
+    # ------------------------------------------------------------------
+    #  Public API  – GameScreen calls this to populate results
+    # ------------------------------------------------------------------
+    def load_results(self, level_name: str, score: int):
+        self.level_name = level_name
+        meta = self.levels[level_name]
+        stars = ScoreBoard._stars(score, meta["max_score"])
+        self.info.text = (
+            f"[b]{level_name}[/b]\n\n"
+            f"Score : {score} / {meta['max_score']}\n"
+            f"Stars : {stars}  (best  {meta['stars_collected']})\n"
+            f"Difficulty : [color=#ff5555]{meta['difficulty']}[/color]\n"
+            f"Song : {Path(meta['song_title']).name}"
+        )
+        # update persistent metadata if better
+        if score > meta["high_score"]:
+            meta["high_score"] = score
+        if stars > meta["stars_collected"]:
+            meta["stars_collected"] = stars
+        save_levels(App.get_running_app().levels)
+
+    def _replay(self, *_):
+        game = self.manager.get_screen("game")
+        game.load_level(self.level_name, self.levels[self.level_name])
+        self.manager.current = "game"
+
+    def _to_levels(self, *_):
+        self.manager.current = "levels"
+
+
 class ScoreBoard(RetroLabel):
     def __init__(self, level_name: str, display, meta, **kw):
         super().__init__(font_size="18sp", halign="left",**kw)
@@ -263,7 +341,7 @@ class GameScreen(Screen):
 
     def load_level(self, name: str, meta: dict):
         self.clear_widgets()
-        self.game_widget = MainWidget(meta["level_file"], meta["song_base_path"])
+        self.game_widget = MainWidget(name, meta["level_file"], meta["song_base_path"], self.manager)
         self.add_widget(self.game_widget)
         self.scoreboard = ScoreBoard(name, self.game_widget.display, meta,
                                      size_hint=(None, None),
@@ -296,6 +374,7 @@ class BeatBlitzApp(App):
         sm.add_widget(LevelSelectScreen())
         sm.add_widget(HowToPlayScreen())
         sm.add_widget(GameScreen())
+        sm.add_widget(EndOfLevelScreen())
         Window.bind(on_key_down=self._dispatch_down, on_key_up=self._dispatch_up)
         return sm
 

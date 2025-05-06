@@ -17,10 +17,13 @@ class GameDisplay(InstructionGroup):
       top collision => stand or bottom collision => head-bump
     - Only allows jumps when on ground or on top of an obstacle
     """
-    def __init__(self, level_data, audio):
+    def __init__(self, level_name, level_data, audio, screen_manager):
         super(GameDisplay, self).__init__()
 
+        self.level_name = level_name
+
         self.audio = audio
+        self.screen_manager = screen_manager
 
         # floor
         w, h = Window.size
@@ -62,6 +65,9 @@ class GameDisplay(InstructionGroup):
         self.dead = False
         self.time_since_last_death = 0
 
+        # end of level state
+        self.level_has_ended = False
+
         # scoring
         self.score  = 0
         self.streak = 0
@@ -86,7 +92,8 @@ class GameDisplay(InstructionGroup):
             o.set_position(slice_left_x, GROUND_HEIGHT)
 
     def on_update(self, dt):
-        #print(self.score)
+        if self.level_has_ended:
+            return
 
         # Check if player should be ressurected
         self.time_since_last_death += dt
@@ -119,6 +126,15 @@ class GameDisplay(InstructionGroup):
 
         # collision check
         self.check_collisions(old_y)
+
+        # ─────────────── level‑complete test ───────────────
+        # Last obstacle's *right* edge in world‑space
+        last_edge = (self.obstacles[-1].slice_idx + 1) * SLICE_WIDTH
+        # Player’s front edge position in world‑space
+        player_world_x = self.scroll_x + self.player_x + self.player_size
+        if player_world_x >= last_edge + 500 and not self.dead:
+            self.level_has_ended = True
+            self.show_results()
 
     def check_collisions(self, old_y):
         px, py = self.player_x, self.player_y
@@ -193,6 +209,15 @@ class GameDisplay(InstructionGroup):
     def incorrect_jump(self):
         self.score -= 5
         self.streak = 0
+
+    def show_results(self):
+        """
+        Callback to the app to show the results
+        """
+        score = self.score
+        end_scr = self.screen_manager.get_screen("end")
+        end_scr.load_results(self.level_name, score)
+        self.screen_manager.current = "end"
 
 # ---------------------------------------------------------
 #  PLAYER CONTROLLER
