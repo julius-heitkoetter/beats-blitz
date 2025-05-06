@@ -197,7 +197,7 @@ class AudioController(object):
         """
         self.change_volume(self.main_channels, 0.05) #mute main channels
         self.change_volume(self.background_channels, 0.2) #keep background
-        self.change_volume(self.bass_channels, 0.5)
+        self.change_volume(self.bass_channels, 0.2)
 
     def ressurection_callback(self):
         """
@@ -214,6 +214,8 @@ class AudioController(object):
         tick_epsilon = 100
         print("CORRECT JUMP", jump_key, slice_num)
         self.change_volume(self.main_channels, 0.3)
+        self.change_volume(self.background_channels, 0.2)
+        self.change_volume(self.bass_channels, 0.5)
         now = self.sched.get_tick()
         if(self.next_note_info is not None):
             if self.next_note_info[0] - now < tick_epsilon:
@@ -227,3 +229,6 @@ class AudioController(object):
         """
         self.play_miss()
         self.change_volume(self.main_channels, 0.15)
+        self.change_volume(self.background_channels, 0.2)
+        self.change_volume(self.bass_channels, 0.3)
+        

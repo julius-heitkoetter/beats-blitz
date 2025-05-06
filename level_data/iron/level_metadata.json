@@ -4,8 +4,8 @@
         "song_base_path": "level_data/iron/midi_data.json",
         "difficulty": "Easy",
         "target_score": 60,
-        "high_score": 20,
-        "stars_collected": 0,
+        "high_score": 570,
+        "stars_collected": 3,
         "max_score": 100,
         "song_title": "Roy's Journey"
     },
@@ -15,8 +15,8 @@
         "song_title": "Link's Awakening Overworld",
         "difficulty": "Medium",
         "target_score": 600,
-        "high_score": 865,
+        "high_score": 965,
         "max_score": 1000,
-        "stars_collected": 2
+        "stars_collected": 3
     }
 }

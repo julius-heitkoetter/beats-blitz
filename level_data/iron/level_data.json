@@ -6,7 +6,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "48": {
     "type": "floatingSquare",
@@ -15,7 +15,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "60": {
     "type": "floatingSquare",
@@ -24,7 +24,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "72": {
     "type": "floatingSquare",
@@ -33,7 +33,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "84": {
     "type": "floatingSquare",
@@ -42,7 +42,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "96": {
     "type": "floatingSquare",
@@ -51,7 +51,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "108": {
     "type": "floatingSquare",
@@ -60,7 +60,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "120": {
     "type": "floatingSquare",
@@ -69,7 +69,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "132": {
     "type": "floatingSquare",
@@ -78,7 +78,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "138": {
     "type": "floatingSquare",
@@ -87,7 +87,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "162": {
     "type": "floatingSquare",
@@ -96,7 +96,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "186": {
     "type": "spikes"
@@ -108,7 +108,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "225": {
     "type": "floatingSquare",
@@ -117,11 +117,11 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "228": {
     "type": "floatingSquare",
-    "height": 6,
+    "height": 1,
     "color": [
       1,
       0,
@@ -135,7 +135,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "255": {
     "type": "floatingSquare",
@@ -144,7 +144,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "264": {
     "type": "floatingSquare",
@@ -153,11 +153,11 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "279": {
     "type": "towerWithSpikes",
-    "height": 6
+    "height": 1
   },
   "288": {
     "type": "floatingSquare",
@@ -166,7 +166,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "303": {
     "type": "floatingSquare",
@@ -175,7 +175,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "315": {
     "type": "floatingSquare",
@@ -184,7 +184,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "324": {
     "type": "floatingSquare",
@@ -193,7 +193,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "330": {
     "type": "floatingSquare",
@@ -202,7 +202,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "336": {
     "type": "floatingSquare",
@@ -211,7 +211,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "354": {
     "type": "floatingSquare",
@@ -220,7 +220,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "360": {
     "type": "floatingSquare",
@@ -229,7 +229,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "372": {
     "type": "floatingSquare",
@@ -238,7 +238,7 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "375": {
     "type": "floatingSquare",
@@ -247,7 +247,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "384": {
     "type": "floatingSquare",
@@ -256,11 +256,11 @@
       0,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "396": {
     "type": "floatingSquare",
-    "height": 6,
+    "height": 1,
     "color": [
       1,
       0,
@@ -274,7 +274,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "417": {
     "type": "floatingSquare",
@@ -283,7 +283,7 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   },
   "420": {
     "type": "floatingSquare",
@@ -292,6 +292,6 @@
       1,
       0
     ],
-    "height": 6
+    "height": 1
   }
 }

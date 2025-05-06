@@ -146,7 +146,7 @@ class GameDisplay(InstructionGroup):
         last_edge = (self.obstacles[-1].slice_idx + 1) * SLICE_WIDTH
         # Player’s front edge position in world‑space
         player_world_x = self.scroll_x + self.player_x + self.player_size
-        if player_world_x >= last_edge + 500 and not self.dead:
+        if player_world_x >= last_edge + 500 and not self.dead and not self.level_has_ended:
             self.level_has_ended = True
             self.show_results()
 

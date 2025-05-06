@@ -345,6 +345,8 @@ class GameScreen(Screen):
     def end_level(self):
         if self.game_widget:
             self.game_widget.audio_ctrl.stop()
+            self.game_widget.level_has_ended = True
+            self.game_widget.dead = True
             #self.game_widget.audio_ctrl = None
 
         self.clear_widgets()
