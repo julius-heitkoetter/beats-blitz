@@ -74,13 +74,17 @@ class HomeScreen(Screen):
         base.add_widget(play)
 
         with self.canvas.before:
-            Color(*PALETTE["bg"]); Rectangle(size=Window.size)
+            Color(*PALETTE["bg"]); self._bg = Rectangle(size=Window.size)
+        Window.bind(size=lambda *_: self._resize_bg())   # keep bg full‑screen
         with self.canvas:
             self.polys = []; rnd = random.choice
             for _ in range(40):
                 Color(*(rnd((PALETTE["accent_on"], PALETTE["accent2"])) + (0.25,)))
                 self.polys.append(Line(points=self._rand_poly(), width=1.5))
         Clock.schedule_interval(self._animate, 1/30)
+
+    def _resize_bg(self):
+        self._bg.size = Window.size
 
     def _rand_poly(self):
         cx, cy = random.uniform(0, Window.width), random.uniform(0, Window.height)
@@ -191,16 +195,29 @@ class LevelSelectScreen(Screen):
 
 class ScoreBoard(RetroLabel):
     def __init__(self, level_name: str, display, meta, **kw):
-        super().__init__(font_size="18sp", **kw)
+        super().__init__(font_size="18sp", halign="left",**kw)
         self.lvl_name, self.display, self.meta = level_name, display, meta
         Clock.schedule_interval(self._refresh, .1)
+        self.size_hint = (None, None)
+        self.width = 500
+        self.text_size = (self.width, None)  # wrap text within this width
+
+        Window.bind(size=self._reposition)
+        self._reposition()
+
+    def _reposition(self, *_):
+        self.texture_update()
+        self.pos =(20, Window.height-120)
 
     def _refresh(self, *_):
         score = self.display.score
         max_sc = self.meta["max_score"]
+        streak_text = f"Streak: {self.display.streak}"
+        if self.display.streak>=3:
+            streak_text += f"  [color=#ff5555]ON FIRE!!![/color]"
         self.text = (
             f"Score : {score}/{max_sc}\n"
-            f"Streak: {self.display.streak}\n"
+            f"{streak_text}\n"
             f"Stars : {self._stars(score, max_sc)}"
         )
         if score > self.meta["high_score"]:
@@ -213,13 +230,36 @@ class ScoreBoard(RetroLabel):
         r = score/max_sc
         return 3 if r >= .9 else 2 if r >= .66 else 1 if r >= .33 else 0
 
+class CommandOverlay(RetroLabel):
+    _TXT = (
+        "jump RED : [b][1][/b]\n"
+        "jump GREEN : [b][2][/b]\n"
+        "jump BLUE : [b][3][/b]\n\n"
+        "restart : [b][r][/b]\n"
+        "quit : [b][q][/b]"
+    )
+    def __init__(self, **kw):
+        super().__init__(text=self._TXT, font_size="18sp",
+                         halign="right", valign="top", **kw)
+        Window.bind(size=self._reposition)
+        self._reposition()
+
+    def _reposition(self, *_):
+        self.texture_update()
+        self.pos = (Window.width - 210, Window.height-170)
+
 class GameScreen(Screen):
     def __init__(self, **kw):
         super().__init__(name="game", **kw)
         with self.canvas.before:
-            Color(*PALETTE["bg"]); Rectangle(size=Window.size)
+           Color(*PALETTE["bg"]); self._bg = Rectangle(size=Window.size)
+        Window.bind(size=lambda *_: self._resize_bg())
         self.game_widget: MainWidget | None = None
         self.scoreboard : ScoreBoard | None = None
+        self.cmd_overlay: CommandOverlay | None = None
+
+    def _resize_bg(self):
+        self._bg.size = Window.size
 
     def load_level(self, name: str, meta: dict):
         self.clear_widgets()
@@ -229,6 +269,9 @@ class GameScreen(Screen):
                                      size_hint=(None, None),
                                      pos=(110, Window.height-120))
         self.add_widget(self.scoreboard)
+        self.cmd_overlay = CommandOverlay(size_hint=(None, None),
+                                     pos=(Window.width - 210, Window.height-170))
+        self.add_widget(self.cmd_overlay)
 
     def on_key_down(self, keycode, modifiers):
         if keycode == 113: #  113 == "q"

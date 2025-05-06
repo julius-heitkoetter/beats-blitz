@@ -32,7 +32,7 @@ class MainWidget(BaseWidget):
         self.player_ctrl.on_key_up(keycode)
 
     def on_resize(self, win_size):
-        pass
+        self.display.on_resize(win_size)
 
     def update(self, dt):
         self.display.on_update(dt)

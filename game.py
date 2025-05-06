@@ -65,6 +65,14 @@ class GameDisplay(InstructionGroup):
         # scoring
         self.score  = 0
         self.streak = 0
+    
+    def on_resize(self, win_size):
+        w, _ = win_size                 # height change does not affect ground
+        self.floor.size = (w, GROUND_HEIGHT)   # stretch / shrink floor bar
+        # redraw player & obstacles where they *would* be at the current scroll
+        # (dt = 0 → no time advance, just recompute positions)
+        self.scroll_world(0)
+        self.player_rect.pos = (self.player_x, self.player_y)
 
     def update_player_color(self, color_key):
         self.player_color_key = color_key
@@ -176,8 +184,11 @@ class GameDisplay(InstructionGroup):
 
 
     def correct_jump(self):
-        self.score += 10
         self.streak += 1
+        if self.streak>=3:
+            self.score += 30
+        else:
+            self.score += 10
 
     def incorrect_jump(self):
         self.score -= 5
