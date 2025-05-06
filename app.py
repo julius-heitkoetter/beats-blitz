@@ -336,6 +336,8 @@ class GameScreen(Screen):
         self.scoreboard : ScoreBoard | None = None
         self.cmd_overlay: CommandOverlay | None = None
 
+        self.levels = App.get_running_app().levels
+
     def _resize_bg(self):
         self._bg.size = Window.size
 
@@ -355,6 +357,8 @@ class GameScreen(Screen):
         if keycode == 113: #  113 == "q"
             self.manager.current = "home"
             return
+        if keycode == 114: # 114 == "r"
+            self.load_level(self.game_widget.level_name, self.levels[self.game_widget.level_name])
         if self.game_widget:
             self.game_widget.on_key_down(["", keycode], modifiers)
 

@@ -10,6 +10,7 @@ class MainWidget(BaseWidget):
         super(MainWidget, self).__init__()
 
         self.screen_manager = screen_manager
+        self.level_name = level_name
 
         # load JSON
         with open(level_data_path, 'r') as f:
