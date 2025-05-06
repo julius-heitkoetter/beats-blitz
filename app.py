@@ -106,11 +106,9 @@ HOW_TO_TEXT = (
     "[b]HOW TO PLAY[/b]\n\n\n"
     "• The stage scrolls automatically – jump over obstacles like Geometry Dash.\n\n"
     "• Press number keys [b]1-3[/b]; each key emits a different colour.\n\n"
-    "• The colour of the key you press must match the colour of the platform\n  you "
-    "jump [i]from[/i]. White platforms accept any colour.\n\n"
+    "• Earn points by jumping [b]off of[/b] platform using the same color key\n" 
+    "as the platform. White platforms accept any colour.\n\n"
     "• Wrong colour: −50 pts.  Death: −50 pts. Jumps off the correct color add 10 pts.\n\n"
-    "• You respawn after a short delay; go for the highest score you can.\n\n"
-    "• Press [b]Q[/b] quit back to HOME while playing"
 )
 
 class HowToPlayScreen(Screen):
