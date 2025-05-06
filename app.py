@@ -342,6 +342,13 @@ class GameScreen(Screen):
     def _resize_bg(self):
         self._bg.size = Window.size
 
+    def end_level(self):
+        if self.game_widget:
+            self.game_widget.audio_ctrl.stop()
+            #self.game_widget.audio_ctrl = None
+
+        self.clear_widgets()
+
     def load_level(self, name: str, meta: dict):
         self.clear_widgets()
         self.game_widget = MainWidget(name, meta["level_file"], meta["song_base_path"], self.manager)
@@ -355,10 +362,14 @@ class GameScreen(Screen):
         self.add_widget(self.cmd_overlay)
 
     def on_key_down(self, keycode, modifiers):
-        if keycode == 113: #  113 == "q"
+        if keycode == 113: #  113 == "q"\
+            #end the level
+            self.end_level()
             self.manager.current = "home"
             return
         if keycode == 114: # 114 == "r"
+            #add the level
+            self.end_level()
             self.load_level(self.game_widget.level_name, self.levels[self.game_widget.level_name])
         if self.game_widget:
             self.game_widget.on_key_down(["", keycode], modifiers)

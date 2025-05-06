@@ -160,9 +160,7 @@ class AudioController(object):
     def stop(self):
 
         self.sched.cancel(self.cmd)
-        self.cmd = None
-        
-        self.playing = False
+        self.__init__(self.midi_data) #reset the audio controller
 
     # start / stop the song
     def toggle(self):
@@ -206,15 +204,15 @@ class AudioController(object):
         """
         Called when the player performs a jump that's in line with the color
         """
-        tick_epsilon = 10
+        tick_epsilon = 100
         print("CORRECT JUMP", jump_key, slice_num)
         self.change_volume(self.main_channels, 0.3)
         now = self.sched.get_tick()
-        print(self.next_note_info[0] - now, "is the time until next note")
-        if self.next_note_info[0] - now < 100:
-            #print("jumping to next note")
-            self.sched.cancel(self.cmd)
-            self.cmd = self.sched.post_at_tick(self.play_note_at_tick, now, self.next_note_info[1])
+        if(self.next_note_info is None):
+            if self.next_note_info[0] - now < tick_epsilon:
+                #print("jumping to next note")
+                self.sched.cancel(self.cmd)
+                self.cmd = self.sched.post_at_tick(self.play_note_at_tick, now, self.next_note_info[1])
 
     def incorrect_jump_callback(self, jump_key, tick_num):
         """
