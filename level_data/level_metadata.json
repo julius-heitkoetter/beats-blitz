@@ -1,11 +1,11 @@
 {
     "Galactic Groove": {
-        "level_file": "level_data/song1/obstacles.json",
-        "song_base_path": "level_data/song1/midi_data.json",
+        "level_file": "level_data/zelda/obstacles.json",
+        "song_base_path": "level_data/zelda/midi_data.json",
         "song_title": "Zelda Soundtrack",
         "difficulty": "Easy",
         "max_score": 1000,
-        "high_score": 20,
+        "high_score": 265,
         "stars_collected": 0
     }
 }

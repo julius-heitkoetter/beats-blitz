@@ -91,7 +91,7 @@ class AudioController(object):
 
     def play_note_at_tick(self, system_tick, tick):
         now = self.sched.get_tick()
-        print("playing note at tick", now, "witch code ticl", tick, "at system tick wanted ", system_tick)
+        #print("playing note at tick", now, "witch code ticl", tick, "at system tick wanted ", system_tick)
         
         for notes in self.notes.get(str(tick), []):
             channel = notes['channel']
@@ -103,20 +103,20 @@ class AudioController(object):
             self.channel_synths[channel]['active_notes'].add(note)
             note_off_tick = now + length * 10
                 
-            self.cmd = self.sched.post_at_tick(self._noteoff1, note_off_tick, (channel, note))
+            self.cmd = self.sched.post_at_tick(self._noteoff, note_off_tick, (channel, note))
         #play next tick index in dictionary
         
         #fidn the next item in the dictionary efficiently
         next_tick = min((int(t) for t in self.notes.keys() if int(t) > tick), default=None)
-        print(next_tick)
+        #print(next_tick)
         if next_tick is not None:
             self.cmd = self.sched.post_at_tick(self.play_note_at_tick, now+(next_tick-tick)*10,next_tick)
 
-    def _noteoff1(self, tick, args):
+    def _noteoff(self, tick, args):
         """
         Called to turn off a note. 
         """
-        print("note off")
+        #print("note off")
         channel, note = args
         if channel in self.channel_synths:
             self.synth.noteoff(channel, note)
@@ -132,13 +132,13 @@ class AudioController(object):
     def start(self):
         if self.playing:
             return
-        print("Starting audio ... ")
+        #print("Starting audio ... ")
         # find the tick of the next beat, and make it "beat aligned"
         now = self.sched.get_tick()
        
         first_tick = min(int(tick) for tick in self.notes.keys())
         next_beat = now + first_tick # get first tick group
-        print(now, next_beat)
+        #print(now, next_beat)
         # now, post the _noteon function (and remember this command)
         
         self.cmd = self.sched.post_at_tick(self.play_note_at_tick, next_beat, first_tick )
@@ -191,11 +191,13 @@ class AudioController(object):
         self.change_volume(self.main_channels, 0.3) #mute main channels
         self.change_volume(self.background_channels, 0.2) #mute main channels
 
-    def correct_jump_callback(self, jump_key, tick_num):
+    def correct_jump_callback(self, jump_key, slice_num):
         """
         Called when the player performs a jump that's in line with the color
         """
-        print("CORRECT JUMP", jump_key, tick_num)
+        print("CORRECT JUMP", jump_key, slice_num)
+        now = self.sched.get_tick()
+        print("tick num", now)
 
     def incorrect_jump_callback(self, jump_key, tick_num):
         """
