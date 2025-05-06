@@ -4,9 +4,9 @@
         "song_base_path": "level_data/iron/midi_data.json",
         "difficulty": "Easy",
         "target_score": 60,
-        "high_score": 570,
+        "high_score": 595,
         "stars_collected": 3,
-        "max_score": 100,
+        "max_score": 1000,
         "song_title": "Roy's Journey"
     },
     "Awakening": {
