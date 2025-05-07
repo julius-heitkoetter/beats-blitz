@@ -84,9 +84,24 @@
   <section class="text-center mb-24">
     <h2 class="text-3xl font-bold mb-6">Download &amp; Play</h2>
     <p class="mb-8">Choose your platform and start jamming. More builds coming soon!</p>
-    <div class="flex flex-col sm:flex-row gap-6 justify-center">
-      <a href="https://example.com/beatblitz-macos.dmg" class="retro-btn">macOS DMG</a>
-      <a href="https://example.com/beatblitz-windows.exe" class="retro-btn">Windows Installer</a>
+    <div class="flex flex-col sm:flex-row gap-6 justify-center relative group">
+      <button class="retro-btn relative cursor-not-allowed" disabled>
+        macOS DMG
+        <span class="absolute top-full mt-1 left-1/2 -translate-x-1/2 text-sm text-[var(--accent-two)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          Coming soon
+        </span>
+      </button>
+      <button class="retro-btn relative cursor-not-allowed" disabled>
+        Windows Installer
+        <span class="absolute top-full mt-1 left-1/2 -translate-x-1/2 text-sm text-[var(--accent-two)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          Coming soon
+        </span>
+      </button>
+    </div>
+    <div class="mt-8">
+      <a href="https://github.com/julius-heitkoetter/beats-blitz" class="retro-btn" target="_blank">
+        View on GitHub
+      </a>
     </div>
   </section>
 
