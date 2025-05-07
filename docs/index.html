@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beat Blitz</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0d0d14; /* PALETTE bg */
+      color: #ffffff;            /* PALETTE fg */
+      font-family: 'Ubuntu Mono', monospace;
+    }
+    /* Accent colours */
+    :root {
+      --accent-on: #33ffa6;
+      --accent-off: #666666;
+      --accent-two: #ff5959;
+    }
+    /* Custom buttons */
+    .retro-btn {
+      @apply px-6 py-3 rounded-2xl shadow-lg text-lg font-bold border-2 transition-all duration-300;
+      background: var(--accent-on);
+      border-color: var(--accent-off);
+      color: #000;
+    }
+    .retro-btn:hover {
+      background: var(--accent-two);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center pt-12 px-4">
+  <!-- Title -->
+  <header class="text-center mb-12 animate-pulse">
+    <h1 class="text-6xl font-bold tracking-wider" style="letter-spacing:0.1em;">BEAT  BLITZ</h1>
+    <p class="mt-4 text-xl text-[var(--accent-on)]">A rhythm‑charged platformer fusion — jump, jam, repeat.</p>
+  </header>
+
+  <!-- Overview -->
+  <section class="max-w-3xl text-lg leading-relaxed mb-16">
+    <p>
+      <strong>Beat Blitz</strong> marries the pulse‑pounding jumps of <em>Geometry Dash</em> with the colour‑coded note precision of <em>Guitar Hero</em>.
+      Leap between platforms that glow <span style="color:var(--accent-on)">red</span>, <span style="color:#6eff33">green</span>, or <span style="color:#339bff">blue</span>; hit the matching key in time and the soundtrack blooms.
+      Miss the colour or the beat and you’ll hear wrong notes, drum dropouts, or total silence as the level scrolls on.
+      Each stage is generated from a MIDI track, so the level <em>is</em> the music — play it tight and you’ll perform the song.
+    </p>
+    <p class="mt-6">
+      Points flow from perfect colour‑synced jumps, long streaks ignite <span style="color:var(--accent-two)">ON FIRE</span> multipliers, and every successful run is scored, starred, and tracked so you can chase that three‑star perfect.
+      A mis‑timed leap costs you — fifty points and a sour chord — but you can always restart, tap into the beat, and try for perfection.
+    </p>
+  </section>
+
+  <!-- Screenshots carousel placeholder -->
+  <section class="w-full max-w-4xl mb-16">
+    <h2 class="text-3xl font-bold mb-6">Screenshots</h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      <img src="assets/screenshot1.png" alt="Gameplay screenshot 1" class="rounded-xl shadow-lg" />
+      <img src="assets/screenshot2.png" alt="Gameplay screenshot 2" class="rounded-xl shadow-lg" />
+    </div>
+  </section>
+
+  <!-- Downloads -->
+  <section class="text-center mb-24">
+    <h2 class="text-3xl font-bold mb-6">Download &amp; Play</h2>
+    <p class="mb-8">Choose your platform and start jamming. More builds coming soon!</p>
+    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+      <a href="https://example.com/beatblitz-macos.dmg" class="retro-btn">macOS DMG</a>
+      <a href="https://example.com/beatblitz-windows.exe" class="retro-btn">Windows Installer</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto pb-6 text-center text-sm text-gray-400">
+    &copy; 2025 Beat Blitz. Made with <span style="color:var(--accent-on)">Python &amp; Kivy</span>.
+  </footer>
+</body>
+</html>
